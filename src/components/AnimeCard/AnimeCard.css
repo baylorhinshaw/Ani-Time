@@ -1,0 +1,11 @@
+.anime-card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 12px;
+    border: 2px solid white;
+}
+
+.image {
+    width: 100%;
+}

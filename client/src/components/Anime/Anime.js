@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import AnimeCard from '../AnimeCard/AnimeCard';
 import './Anime.css';
-
+import PageChange from '../Pagination/Pagination';
 
 function Anime() {
 
@@ -44,6 +44,7 @@ function Anime() {
           <input placeholder='Season' onChange={e => setSeason(e.target.value)}/>
           <button onClick={getAnime}>Submit</button>
           {renderAnime()}
+          <PageChange></PageChange>
         </header>
       </div>
     );

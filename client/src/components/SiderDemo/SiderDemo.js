@@ -9,6 +9,7 @@ import {
 } from '@ant-design/icons';
 import React, { useState} from 'react';
 import Anime from '../Anime/Anime';
+import { Route, Switch, Link} from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
 
@@ -26,7 +27,9 @@ function SiderDemo() {
         <Sider trigger={null} collapsible collapsed={collapsed}> 
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<VideoCameraOutlined />}>
-              Anime
+              <Link to="/Anime">
+                Anime
+              </Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<UserOutlined />}>
               Profile
@@ -42,7 +45,7 @@ function SiderDemo() {
               className: 'trigger',
               onClick: toggle,
             })}
-          </Header> 
+          </Header>
           <Content
             className="site-layout-background"
             style={{
@@ -51,8 +54,9 @@ function SiderDemo() {
               minHeight: 280,
             }}
           >
-            <Anime></Anime>
-            Content
+          <Switch>
+            <Route exact path='/Anime' component={Anime} />
+          </Switch>
           </Content>
         </Layout>
       </Layout> 

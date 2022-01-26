@@ -2,23 +2,30 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import AnimeCard from '../AnimeCard/AnimeCard';
 import './Anime.css';
-import PageChange from '../Pagination/Pagination';
+import { Pagination } from 'antd';
 
 function Anime() {
 
     const [anime, setAnime] = useState([]);
     const [year, setYear] = useState(2022);
     const [season, setSeason] = useState("winter");
+    const [page, setPage ] = useState(1);
+    const [lastPage, setLastPage ] = useState(1);
   
     useEffect(() =>{
-        getAnime(year, season);
-    }, [])
+        getAnime();
+    }, [page, lastPage])
+
+    function onChange(page, pageSize) {
+      setPage(page);
+    }
     
     async function getAnime(){
-      let res = await axios.get(`https://api.jikan.moe/v4/seasons/${year}/${season}`);
+      let res = await axios.get(`https://api.jikan.moe/v4/seasons/${year}/${season}?page=${page}`);
       setAnime(res.data.data);
+      setLastPage(res.data.pagination.last_visible_page);
     }
-  
+
     function renderAnime(){
       let componentArray = [];
       
@@ -44,7 +51,7 @@ function Anime() {
           <input placeholder='Season' onChange={e => setSeason(e.target.value)}/>
           <button onClick={getAnime}>Submit</button>
           {renderAnime()}
-          <PageChange></PageChange>
+          <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={25} />
         </header>
       </div>
     );

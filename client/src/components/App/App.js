@@ -1,5 +1,13 @@
 import './App.css';
 import SiderDemo from '../SiderDemo/SiderDemo';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
 /**
  * Requirements:
  * 1. Create an Anime card component
@@ -13,9 +21,30 @@ import SiderDemo from '../SiderDemo/SiderDemo';
  *   - Use a for loop to render the created Anime card component
  */
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <SiderDemo></SiderDemo>
+    <ApolloProvider client={client}>
+      <SiderDemo></SiderDemo>
+    </ApolloProvider>
   );
 }
 

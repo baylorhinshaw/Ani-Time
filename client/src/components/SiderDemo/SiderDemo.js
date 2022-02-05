@@ -6,10 +6,13 @@ import {
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
+  FireOutlined,
 } from '@ant-design/icons';
 import React, { useState} from 'react';
 import Anime from '../Anime/Anime';
 import { Route, Switch, Link} from 'react-router-dom';
+import Login from '../../pages/Login';
+import Signup from '../../pages/Signup'
 
 const { Header, Sider, Content } = Layout;
 
@@ -31,10 +34,15 @@ function SiderDemo() {
                 Anime
               </Link>
             </Menu.Item>
-            <Menu.Item key="2" icon={<UserOutlined />}>
+            <Menu.Item key="2" icon={<FireOutlined />}>
+              <Link to="/login">
+                Login
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="3" icon={<UserOutlined />}>
               Profile
             </Menu.Item>
-            <Menu.Item key="3" icon={<UploadOutlined />}>
+            <Menu.Item key="4" icon={<UploadOutlined />}>
               Watch Later
             </Menu.Item>
           </Menu>
@@ -56,6 +64,8 @@ function SiderDemo() {
           >
           <Switch>
             <Route exact path='/Anime' component={Anime} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
           </Switch>
           </Content>
         </Layout>

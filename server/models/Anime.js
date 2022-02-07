@@ -12,7 +12,7 @@ const animeSchema = new Schema({
     trim: true
     },
     score: {
-    type: String,
+    type: Number,
     },
     image: {
     type: String,

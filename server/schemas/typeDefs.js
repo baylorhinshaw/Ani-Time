@@ -18,9 +18,14 @@ const typeDefs = gql`
     savedAnimes: [Anime]
   }
 
+  type Auth {
+    token: ID
+    user: User
+  }
+
   type Query {
-    animes: [Anime]
-    anime(_id: ID!): Anime
+    users: [User]
+    user(_id: ID!): User
     me: User
   }
 

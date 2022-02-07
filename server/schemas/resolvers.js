@@ -2,10 +2,10 @@ const { User } = require('../models');
 
 const resolvers = {
   Query: {
-    animes: async () => {
+    users: async () => {
       return User.find().populate('animes');
     },
-    anime: async (parent, args) => {
+    user: async (parent, args) => {
       return User.findOne({_id: args._id}).populate('animes')
     },
     me: async (parent, args, context) => {
@@ -14,8 +14,6 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-  },
-  Mutation: {
   }
 };
 

@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema from Book.js
+// import schema from Anime.js
 const animeSchema = require('./Anime');
 
 const userSchema = new Schema(
@@ -26,7 +26,6 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    // set savedBooks to be an array of data that adheres to the bookSchema
     savedAnimes: [animeSchema],
   },
   // set this to use virtual below

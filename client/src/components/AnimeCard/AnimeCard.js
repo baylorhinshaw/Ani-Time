@@ -1,3 +1,4 @@
+import React from 'react'
 import './AnimeCard.css'
 
 function AnimeCard(props) {

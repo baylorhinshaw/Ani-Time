@@ -9,3 +9,9 @@
 .image {
     width: 100%;
 }
+
+.btn {
+    width: 100%;
+    font-size: 16px;
+    margin: 12px 0px 16px 0px;
+}

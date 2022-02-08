@@ -1,35 +1,57 @@
-[
-  {
-    "name": "JavaScript"
+[{
+    "firstname": "Bob",
+    "lastname": "Y",
+    "email": "abcabcab@gmail.com",
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
   },
   {
-    "name": "HTML"
+    "firstname": "Baylor",
+    "lastname": "Yoy",
+    "email": "abcabca@gmail.com",
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
+    
   },
   {
-    "name": "CSS"
+    "firstname": "Bora",
+    "lastname": "Yoyo",
+    "email": "abcabc@gmail.com",
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
   },
   {
-    "name": "Node.js"
+    "firstname": "Brendan",
+    "lastname": "Yoyoy",
+    "email": "abcab@gmail.com",
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
   },
   {
-    "name": "Express.js"
-  },
-  {
-    "name": "MySQL"
-  },
-  {
-    "name": "MongoDB"
-  },
-  {
-    "name": "React"
-  },
-  {
-    "name": "GraphQL"
-  },
-  {
-    "name": "Sequelize"
-  },
-  {
-    "name": "Handlebars.js"
+    "firstname": "Fahad",
+    "lastname": "Yoyoyo",
+    "email": "abca@gmail.com",
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
   }
 ]

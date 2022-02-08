@@ -8,7 +8,7 @@ db.once('open', async () => {
 
   const Users = await User.insertMany(userData);
 
-  console.log('Technologies seeded!');
+  console.log('Users Seeded!');
   console.log(Users)
   process.exit(0);
 });

@@ -1,31 +1,31 @@
 [{
-    "first_name": "Bob",
-    "last_name": "Yo",
-    "email": "abc.gmail.com",
-    "password": "password12345"
+    "firstname": "Bob",
+    "lastname": "Y",
+    "email": "abcabcab@gmail.com",
+    "password": "passwordabcabc"
   },
   {
-    "first_name": "Baylor",
-    "last_name": "Yo",
-    "email": "abc.gmail.com",
-    "password": "password12345"
+    "firstname": "Baylor",
+    "lastname": "Yoy",
+    "email": "abcabca@gmail.com",
+    "password": "passwordabcabc"
   },
   {
-    "first_name": "Bora",
-    "last_name": "Yo",
-    "email": "abc.gmail.com",
-    "password": "password12345"
+    "firstname": "Bora",
+    "lastname": "Yoyo",
+    "email": "abcabc@gmail.com",
+    "password": "passwordabcabc"
   },
   {
-    "first_name": "Brendan",
-    "last_name": "Yo",
-    "email": "abc.gmail.com",
-    "password": "password12345"
+    "firstname": "Brendan",
+    "lastname": "Yoyoy",
+    "email": "abcab@gmail.com",
+    "password": "passwordabcabc"
   },
   {
-    "first_name": "Fahad",
-    "last_name": "Yo",
-    "email": "abc.gmail.com",
-    "password": "password12345"
+    "firstname": "Fahad",
+    "lastname": "Yoyoyo",
+    "email": "abca@gmail.com",
+    "password": "passwordabcabc"
   }
 ]

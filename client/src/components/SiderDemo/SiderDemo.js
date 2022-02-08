@@ -12,7 +12,9 @@ import React, { useState} from 'react';
 import Anime from '../Anime/Anime';
 import { Route, Switch, Link} from 'react-router-dom';
 import Login from '../../pages/Login';
-import Signup from '../../pages/Signup'
+import Signup from '../../pages/Signup';
+import Profile from '../../pages/Profile'
+import Auth from "../../utils/auth";
 
 const { Header, Sider, Content } = Layout;
 
@@ -24,6 +26,22 @@ function SiderDemo() {
     function toggle() {
         setCollapsed(!collapsed);
     }
+    
+    function login() {
+      if (Auth.loggedIn()) {
+        return (
+          <Link to="/Anime" onClick={() => Auth.logout()}>
+            Logout
+          </Link>
+        );
+      } else {
+        return (
+          <Link to="/login">
+            Login
+          </Link>
+        );
+      }
+    };
 
     return (
         <Layout>
@@ -35,15 +53,12 @@ function SiderDemo() {
               </Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<FireOutlined />}>
-              <Link to="/login">
-                Login
-              </Link>
+              {login()}
             </Menu.Item>
             <Menu.Item key="3" icon={<UserOutlined />}>
-              Profile
-            </Menu.Item>
-            <Menu.Item key="4" icon={<UploadOutlined />}>
-              Watch Later
+              <Link to="/profile">
+                Profile
+              </Link>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -66,6 +81,7 @@ function SiderDemo() {
             <Route exact path='/Anime' component={Anime} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/profile" component={Profile} />
           </Switch>
           </Content>
         </Layout>

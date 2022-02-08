@@ -22,25 +22,38 @@ function Anime() {
     
     async function getAnime(){
       let res = await axios.get(`https://api.jikan.moe/v4/seasons/${year}/${season}?page=${page}`);
-      setAnime(res.data.data);
+      const { data } = res.data;
+      const animeData = data.map((anime) => ({
+        titleEnglish: anime.title_japanese,
+        titleJapanese: anime.title_english,
+        genres: [anime.genres],
+        image: anime.images.jpg.image_url,
+        mal_id: anime.mal_id,
+        score: anime.score
+      })
+      )
+
+      setAnime(animeData);
       setLastPage(res.data.pagination.last_visible_page);
     }
 
     function renderAnime(){
       let componentArray = [];
-      
+      console.log(anime)
+
       for (let i= 0; i < anime.length; i++) {
         let curAnime = anime[i]
+
         componentArray.push(
           <AnimeCard 
-            titleJapanese={curAnime.title_japanese} 
-            titleEnglish={curAnime.title_english}
+            titleJapanese={curAnime.titleJapanese} 
+            titleEnglish={curAnime.titleEnglish}
             score={curAnime.score}
-            image={curAnime.images.jpg.image_url} />
+            image={curAnime.image} />
         )
       }
       // Logic
-  
+      console.log(componentArray)
       return componentArray;
     }
   
@@ -58,4 +71,3 @@ function Anime() {
   }
   
   export default Anime;
-  

@@ -1,35 +1,31 @@
-[
-  {
-    "name": "JavaScript"
+[{
+    "first_name": "Bob",
+    "last_name": "Yo",
+    "email": "abc.gmail.com",
+    "password": "password12345"
   },
   {
-    "name": "HTML"
+    "first_name": "Baylor",
+    "last_name": "Yo",
+    "email": "abc.gmail.com",
+    "password": "password12345"
   },
   {
-    "name": "CSS"
+    "first_name": "Bora",
+    "last_name": "Yo",
+    "email": "abc.gmail.com",
+    "password": "password12345"
   },
   {
-    "name": "Node.js"
+    "first_name": "Brendan",
+    "last_name": "Yo",
+    "email": "abc.gmail.com",
+    "password": "password12345"
   },
   {
-    "name": "Express.js"
-  },
-  {
-    "name": "MySQL"
-  },
-  {
-    "name": "MongoDB"
-  },
-  {
-    "name": "React"
-  },
-  {
-    "name": "GraphQL"
-  },
-  {
-    "name": "Sequelize"
-  },
-  {
-    "name": "Handlebars.js"
+    "first_name": "Fahad",
+    "last_name": "Yo",
+    "email": "abc.gmail.com",
+    "password": "password12345"
   }
 ]

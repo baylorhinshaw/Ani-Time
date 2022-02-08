@@ -2,30 +2,30 @@
     "firstname": "Bob",
     "lastname": "Y",
     "email": "abcabcab@gmail.com",
-    "password": "passwordabcabc"
+    "password": "password12345"
   },
   {
     "firstname": "Baylor",
     "lastname": "Yoy",
     "email": "abcabca@gmail.com",
-    "password": "passwordabcabc"
+    "password": "password12345"
   },
   {
     "firstname": "Bora",
     "lastname": "Yoyo",
     "email": "abcabc@gmail.com",
-    "password": "passwordabcabc"
+    "password": "password12345"
   },
   {
     "firstname": "Brendan",
     "lastname": "Yoyoy",
     "email": "abcab@gmail.com",
-    "password": "passwordabcabc"
+    "password": "password12345"
   },
   {
     "firstname": "Fahad",
     "lastname": "Yoyoyo",
     "email": "abca@gmail.com",
-    "password": "passwordabcabc"
+    "password": "password12345"
   }
 ]

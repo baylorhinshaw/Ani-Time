@@ -9,7 +9,7 @@ function AnimeCard(props) {
             <div>{props.titleEnglish}</div>
             <div>{props.score}</div>
             <div className='btn'>
-                <button onClick={userAlert}> ⬇ Watch Later</button>
+                <button onClick={alert}> ⬇ Watch Later</button>
             </div>
         </div>
 

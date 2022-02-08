@@ -1,4 +1,5 @@
 import React from 'react'
+import { QUERY_USER } from '../utils/queries'
 
 function Profile() {
     return (

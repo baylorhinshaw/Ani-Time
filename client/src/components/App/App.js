@@ -8,6 +8,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 /**
  * Requirements:
@@ -44,7 +46,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      <Router>
       <SiderDemo></SiderDemo>
+      </Router>
     </ApolloProvider>
   );
 }

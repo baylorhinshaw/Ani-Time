@@ -2,30 +2,56 @@
     "firstname": "Bob",
     "lastname": "Y",
     "email": "abcabcab@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
   },
   {
     "firstname": "Baylor",
     "lastname": "Yoy",
     "email": "abcabca@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
+    
   },
   {
     "firstname": "Bora",
     "lastname": "Yoyo",
     "email": "abcabc@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
   },
   {
     "firstname": "Brendan",
     "lastname": "Yoyoy",
     "email": "abcab@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
   },
   {
     "firstname": "Fahad",
     "lastname": "Yoyoyo",
     "email": "abca@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "savedAnimes":[
+      {
+        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+      }
+    ]
   }
 ]

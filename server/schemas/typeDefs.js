@@ -16,7 +16,7 @@ const typeDefs = gql`
     genres: [String]
     titleJapanese: String
     titleEnglish: String
-    score: Int
+    score: Float
     image: String
   }
 
@@ -34,7 +34,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(firstname: String!, lastname: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    saveAnime(titleEnglish: String, titleJapanese: String, score: Int!, mal_id: Int, genres: [String], image: String): User
+    saveAnime(titleEnglish: String, titleJapanese: String, score: Float!, mal_id: Int, genres: [String], image: String): User
     removeAnime(mal_id: Int): User
   }
 `;

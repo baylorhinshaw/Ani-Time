@@ -49,7 +49,9 @@ function Anime() {
             titleJapanese={curAnime.titleJapanese} 
             titleEnglish={curAnime.titleEnglish}
             score={curAnime.score}
-            image={curAnime.image} />
+            image={curAnime.image} 
+            watchLater = {true} 
+            />
         )
       }
       // Logic

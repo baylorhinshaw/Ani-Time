@@ -8,13 +8,15 @@ function AnimeCard(props) {
             <div>{props.titleJapanese}</div>
             <div>{props.titleEnglish}</div>
             <div>{props.score}</div>
-            <div className='btn'>
+            {props.watchLater == true && <div className='btn'>
                 <button onClick={alert}> ⬇ Watch Later</button>
-            </div>
+            </div>}
+            {props.removeWatchLater == true && <div className='btn'>
+                <button onClick={alert}> Remove </button>
+            </div>}
         </div>
 
     )
-
 
 }
 

@@ -16,8 +16,8 @@ const resolvers = {
     },
   },
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, { firstname, lastname, email, password }) => {
+      const user = await User.create({ firstname, lastname, email, password });
       const token = signToken(user);
 
       return {token, user}
@@ -39,12 +39,24 @@ const resolvers = {
 
       return { token, user };
     },
-    saveAnime: async () => {
-
+    saveAnime: async (parent, args, context ) => {
+      if (context.user) {
+   
+      return User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { savedAnimes: args }},
+          { new: true, runValidators: true }
+       )
+      }
     },
-    removeAnime: async () => {
-
-    }
+    removeAnime: async (parent, {mal_id}, context ) => {
+      console.log(mal_id)
+      return await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { savedAnimes: { mal_id: mal_id } } },
+        { new: true }
+        );
+    },
   }
 };
 

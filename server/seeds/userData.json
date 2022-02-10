@@ -5,7 +5,7 @@
     "password": "password12345",
     "savedAnimes":[
       {
-        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+        "mal_id":1234
       }
     ]
   },
@@ -16,7 +16,7 @@
     "password": "password12345",
     "savedAnimes":[
       {
-        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+        "mal_id":1234
       }
 
     ]
@@ -29,7 +29,7 @@
     "password": "password12345",
     "savedAnimes":[
       {
-        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+        "mal_id":1234
       }
     ]
   },
@@ -40,7 +40,7 @@
     "password": "password12345",
     "savedAnimes":[
       {
-        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+        "mal_id": 1234
       }
     ]
   },
@@ -51,7 +51,7 @@
     "password": "password12345",
     "savedAnimes":[
       {
-        "mal_id":"jfklasdjflsajdlkfjlasdjflkas"
+        "mal_id": 1234
       }
     ]
   }

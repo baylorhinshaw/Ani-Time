@@ -13,14 +13,14 @@ export const LOGIN = gql`
 
 export const ADD_USER = gql`
   mutation addUser(
-    $firstName: String!
-    $lastName: String!
+    $firstname: String!
+    $lastname: String!
     $email: String!
     $password: String!
   ) {
     addUser(
-      firstName: $firstName
-      lastName: $lastName
+      firstname: $firstname
+      lastname: $lastname
       email: $email
       password: $password
     ) {
@@ -33,17 +33,29 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_ANIME = gql`
-mutation saveAnime($_id: ID!, $title_english: String, $score: Int!, $image: String) {
-  saveAnime() {
-    
+mutation saveAnime(titleEnglish: String, titleJapanese: String, score: Int!, mal_id: Int, genres: [String], image: String) {
+  saveAnime(titleEnglish: $titleEnglish, titleJapanese: $titleJapanese, score: $score, mal_id: $mal_id, genres: $genres, image: $image) {
+    _id
+    firstname
+    lastname
+    email
+    savedAnimes {
+      mal_id
+    }
   }
 }
 `;
 
 export const REMOVE_ANIME = gql`
-mutation removeAnime($_id: ID!) {
-  removeAnime() {
-    
+mutation removeAnime(mal_id: Int) {
+  removeAnime(mal_id: $mal_id) {
+    _id
+    firstname
+    lastname
+    email
+    savedAnimes {
+      mal_id
+    }
   }
 }
 `;

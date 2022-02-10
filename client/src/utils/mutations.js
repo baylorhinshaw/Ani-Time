@@ -31,3 +31,19 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const SAVE_ANIME = gql`
+mutation saveAnime($_id: ID!, $title_english: String, $score: Int!, $image: String) {
+  saveAnime() {
+    
+  }
+}
+`;
+
+export const REMOVE_ANIME = gql`
+mutation removeAnime($_id: ID!) {
+  removeAnime() {
+    
+  }
+}
+`;

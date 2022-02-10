@@ -43,6 +43,22 @@ function SiderDemo() {
       }
     };
 
+    function profile() {
+      if (Auth.loggedIn()) {
+        return (
+          <Link to="/profile">
+            Profile
+          </Link>
+        );
+      } else {
+        return (
+          <Link to="/login">
+            Profile
+          </Link>
+        );
+      }
+    };
+
     return (
         <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed}> 
@@ -56,9 +72,7 @@ function SiderDemo() {
               {login()}
             </Menu.Item>
             <Menu.Item key="3" icon={<UserOutlined />}>
-              <Link to="/profile">
-                Profile
-              </Link>
+              {profile()}
             </Menu.Item>
           </Menu>
         </Sider>

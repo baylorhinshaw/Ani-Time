@@ -32,18 +32,15 @@ function Anime() {
         score: anime.score
       })
       )
-
       setAnime(animeData);
       setLastPage(res.data.pagination.last_visible_page);
     }
 
     function renderAnime(){
       let componentArray = [];
-      console.log(anime)
 
       for (let i= 0; i < anime.length; i++) {
         let curAnime = anime[i]
-
         componentArray.push(
           <AnimeCard 
             titleJapanese={curAnime.titleJapanese} 
@@ -53,7 +50,7 @@ function Anime() {
         )
       }
       // Logic
-      console.log(componentArray)
+
       return componentArray;
     }
   

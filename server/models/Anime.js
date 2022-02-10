@@ -3,19 +3,26 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const animeSchema = new Schema({
-    title_japanese: {
-    type: String,
-    trim: true
-  },
-    title_english: {
-    type: String,
-    trim: true
+    mal_id: {
+      type: Number,
+      required: true
+    },
+    genres: {
+      type: [String]
+    },
+    titleJapanese: {
+      type: String,
+      trim: true
+    },
+    titleEnglish: {
+      type: String,
+      trim: true
     },
     score: {
-    type: Number,
+      type: Number,
     },
     image: {
-    type: String,
+      type: String,
     }
 });
 

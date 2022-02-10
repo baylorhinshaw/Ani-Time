@@ -32,6 +32,7 @@ function Anime() {
         score: anime.score
       })
       )
+      console.log(animeData)
       setAnime(animeData);
       setLastPage(res.data.pagination.last_visible_page);
     }

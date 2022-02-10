@@ -8,8 +8,14 @@ function AnimeCard(props) {
             <div>{props.titleJapanese}</div>
             <div>{props.titleEnglish}</div>
             <div>{props.score}</div>
+            <div className='btn'>
+                <button onClick={alert}> ⬇ Watch Later</button>
+            </div>
         </div>
+
     )
+
+
 }
 
 export default AnimeCard;

@@ -1,4 +1,7 @@
 const { User } = require('../models');
+const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
+
 
 const resolvers = {
   Query: {
@@ -24,6 +27,7 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
+      console.log(user)
 
       if (!user) {
         throw new AuthenticationError('No user found with this email address');
@@ -40,6 +44,8 @@ const resolvers = {
       return { token, user };
     },
     saveAnime: async (parent, args, context ) => {
+      console.log(context.user)
+      console.log(args)
       if (context.user) {
    
       return User.findOneAndUpdate(

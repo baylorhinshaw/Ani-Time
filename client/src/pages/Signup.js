@@ -5,30 +5,36 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ firstname: '', lastname: '', email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: {
-        email: formState.email,
-        password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
-      },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
-  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    console.log(event.target)
+    
     setFormState({
       ...formState,
       [name]: value,
     });
+
+    console.log(formState)
   };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+    const mutationResponse = await addUser({
+      variables: formState
+    });
+    console.log(mutationResponse)
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
+  } catch (err) {
+    console.error(err)
+  }
+  };
+
+
 
   return (
     <div className="container my-1">
@@ -37,22 +43,22 @@ function Signup(props) {
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
+          <label htmlFor="firstname">First Name:</label>
           <input
             placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
+            name="firstname"
+            type="firstname"
+            id="firstname"
             onChange={handleChange}
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
+          <label htmlFor="lastname">Last Name:</label>
           <input
             placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
+            name="lastname"
+            type="lastname"
+            id="lastname"
             onChange={handleChange}
           />
         </div>

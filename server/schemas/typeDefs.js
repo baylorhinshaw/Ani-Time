@@ -11,9 +11,7 @@ const typeDefs = gql`
   }
 
   type Anime {
-    _id: ID
     mal_id: Int
-    genres: [String]
     titleJapanese: String
     titleEnglish: String
     score: Float

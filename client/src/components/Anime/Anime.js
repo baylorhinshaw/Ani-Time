@@ -1,77 +1,80 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import AnimeCard from '../AnimeCard/AnimeCard';
-import './Anime.css';
 import Auth from '../../utils/auth'
 import { Pagination } from 'antd';
-import { SAVE_ANIME} from '../../utils/mutations'
-import { useMutation} from '@apollo/client'
+import { SAVE_ANIME } from '../../utils/mutations'
+import { useMutation } from '@apollo/client'
 import { saveAnimeIds, getSavedAnimeIds } from '../../utils/localStorage'
 import Layout, { Content } from 'antd/lib/layout/layout';
 
+import './Anime.css';
 
 function Anime() {
 
-const [anime, setAnime] = useState([]);
-const [year, setYear] = useState(2022);
-const [season, setSeason] = useState("winter");
-const [page, setPage ] = useState(1);
-const [lastPage, setLastPage ] = useState(1);
-const [savedAnimeIds, setSavedAnimeIds] = useState(getSavedAnimeIds());
-const [saveAnime] = useMutation(SAVE_ANIME)
+  const [anime, setAnime] = useState([]);
+  const [year, setYear] = useState(2022);
+  const [season, setSeason] = useState("winter");
+  const [page, setPage ] = useState(1);
+  const [lastPage, setLastPage ] = useState(1);
+  const [savedAnimeIds, setSavedAnimeIds] = useState(getSavedAnimeIds());
+  const [saveAnime, { error }] = useMutation(SAVE_ANIME)
 
-useEffect(() =>{
-getAnime();
-}, [page, lastPage])
+  useEffect(() =>{
+    getAnime();
+  }, [page, lastPage])
 
-useEffect(() => {
-return () => saveAnimeIds(savedAnimeIds);
-});
+  useEffect(() => {
+    return () => saveAnimeIds(savedAnimeIds);
+  });
 
-function onChange(page, pageSize) {
-setPage(page);
-}
+  function onChange(page, pageSize) {
+    setPage(page);
+  }
 
-async function getAnime(){
-let res = await axios.get(`https://api.jikan.moe/v4/seasons/${year}/${season}?page=${page}`);
-const { data } = res.data;
-const animeData = data.map((anime) => ({
-titleEnglish: anime.title_japanese,
-titleJapanese: anime.title_english,
-genres: [anime.genres],
-image: anime.images.jpg.image_url,
-mal_id: anime.mal_id,
-score: anime.score
-})
-)
+  const getAnime = async () => {
+    let res = await axios.get(`https://api.jikan.moe/v4/seasons/${year}/${season}?page=${page}`);
+    const { data } = res.data;
+    const animeData = data.map((anime) => ({
+      titleEnglish: anime.title_japanese,
+      titleJapanese: anime.title_english,
+      // genres: [anime.genres],
+      image: anime.images.jpg.image_url,
+      mal_id: anime.mal_id,
+      score: anime.score
+      })
+    )
 
-setAnime(animeData);
-setLastPage(res.data.pagination.last_visible_page);
-}
-
-
-const handleSaveAnime = async (animeId) => {
-// find the book in `anime` state by the matching id
-const animeToSave = anime.find((anime) => anime.mal_id === animeId);
+    setAnime(animeData);
+    setLastPage(res.data.pagination.last_visible_page);
+  }
 
 
-// get token
-const token = Auth.loggedIn() ? Auth.getToken() : null;
+  const handleSaveAnime = async (animeId) => {
+  // find the book in `anime` state by the matching id
+    const animeToSave = anime.find((anime) => anime.mal_id === animeId)
+    console.log(animeToSave)
 
-if (!token) {
-return false;
-}
+  // get token
+   const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-try {
-const {data} = await saveAnime({variables: {...animeToSave} });
+    if (!token) {
+    return false;
+    }
 
 
-// if anime successfully saves to user's account, save anime id to state
-setSavedAnimeIds([...savedAnimeIds, animeToSave.animeId]);
-} catch (err) {
-console.error(err);
-}
-};
+  try {
+    const { data } = await saveAnime({
+      variables: {...animeToSave} 
+    })
+
+    console.log(data)
+
+  // if anime successfully saves to user's account, save anime id to state
+    setSavedAnimeIds([...savedAnimeIds, animeToSave.animeId]);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
 return (
 <Layout>

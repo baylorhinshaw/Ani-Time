@@ -1,5 +1,7 @@
+import { useMutation, useQuery } from '@apollo/client';
 import React from 'react'
 import './AnimeCard.css'
+
 
 function AnimeCard(props) {
     return (
@@ -9,7 +11,9 @@ function AnimeCard(props) {
             <div>{props.titleEnglish}</div>
             <div>{props.score}</div>
             {props.watchLater == true && <div className='btn'>
-                <button onClick={alert}> ⬇ Watch Later</button>
+                <button 
+                onClick={alert}> ⬇ Watch Later
+                </button>
             </div>}
             {props.removeWatchLater == true && <div className='btn'>
                 <button onClick={alert}> Remove </button>
@@ -19,5 +23,6 @@ function AnimeCard(props) {
     )
 
 }
+
 
 export default AnimeCard;

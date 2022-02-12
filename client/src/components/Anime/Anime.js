@@ -15,16 +15,16 @@ function Anime() {
     const [season, setSeason] = useState("winter");
     const [page, setPage ] = useState(1);
     const [lastPage, setLastPage ] = useState(1);
-    // const [savedAnimeIds, setSavedAnimeIds] = useState(getSavedAnimeId());
-    // const [saveAnime] = useMutation(SAVE_ANIME)
+    const [savedAnimeIds, setSavedAnimeIds] = useState(getSavedAnimeId());
+    const [saveAnime] = useMutation(SAVE_ANIME)
   
     useEffect(() =>{
         getAnime();
     }, [page, lastPage])
 
-    // useEffect(() => {
-    //   return () => savedAnimeIds(savedAnimeIds);
-    // });
+    useEffect(() => {
+      return () => savedAnimeIds(savedAnimeIds);
+    });
 
     function onChange(page, pageSize) {
       setPage(page);

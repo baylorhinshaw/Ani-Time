@@ -44,7 +44,7 @@ mal_id: anime.mal_id,
 score: anime.score
 })
 )
-console.log(animeData)
+
 setAnime(animeData);
 setLastPage(res.data.pagination.last_visible_page);
 }
@@ -94,15 +94,15 @@ return (
           <div>{ani.titleEnglish}</div>
           <div>Rating: {ani.score}</div>
           {Auth.loggedIn() && (
-                    <button
-                      disabled={savedAnimeIds?.some((savedAnimeId) => savedAnimeId === anime.mar_id)}
-                      className='btn-block btn-info'
-                      onClick={() => handleSaveAnime(anime.mar_id)}>
-                      {savedAnimeIds?.some((savedAnimeId) => savedAnimeId === anime.mar_id)
-                        ? 'This book has already been saved!'
-                        : 'Save this Book!'}
-                    </button>
-                  )}
+            <button
+              disabled={savedAnimeIds?.some((savedAnimeId) => savedAnimeId === ani.mal_id)}
+              className='btn-block btn-info'
+              onClick={() => handleSaveAnime(ani.mal_id)}>
+              {savedAnimeIds?.some((savedAnimeId) => savedAnimeId === ani.mal_id)
+                ? 'This anime has already been saved!'
+                : 'Save this Anime!'}
+            </button>
+          )}
 
 
         </div>

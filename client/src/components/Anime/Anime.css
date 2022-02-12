@@ -18,3 +18,23 @@
   align-items: center;
   background: white;
 }
+
+.anime-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 12px;
+  padding: 6px;
+  border: 5px solid rgb(0, 0, 0);
+  background: white;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.btn {
+  width: 100%;
+  font-size: 16px;
+  margin: 12px 0px 16px 0px;
+}

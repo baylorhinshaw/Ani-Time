@@ -1,4 +1,4 @@
-export const getSavedAnimeId = () => {
+export const getSavedAnimeIds = () => {
    const savedAnimeId = localStorage.getItem('saved_anime')
      ? JSON.parse(localStorage.getItem('saved_anime'))
      : [];
@@ -6,7 +6,7 @@ export const getSavedAnimeId = () => {
    return savedAnimeId;
  };
  
- export const saveAnimeId = (saveIdArr) => {
+ export const saveAnimeIds = (saveIdArr) => {
    if (saveIdArr.length) {
      localStorage.setItem('saved_anime', JSON.stringify(saveIdArr));
    } else {

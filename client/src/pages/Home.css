@@ -1,8 +1,9 @@
 .home {
     display: flex;
     flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center 35%;
     height: 100vh;
-    background:rgb(132, 106, 231) ;
 }
 
 .anitime {

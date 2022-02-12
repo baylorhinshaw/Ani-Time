@@ -94,10 +94,10 @@ function Anime() {
                 <div>Rating: {ani.score}</div>
                 {Auth.loggedIn() && (
                     <button
-                      disabled={savedAnimeIds?.some((savedAnimeId) => savedAnimeId === anime.mar_id)}
+                      disabled={savedAnimeIds?.some((savedAnimeId) => savedAnimeId === ani.mal_id)}
                       className='btn-block btn-info'
-                      onClick={() => handleSaveAnime(anime.mar_id)}>
-                      {savedAnimeIds?.some((savedAnimeId) => savedAnimeId === anime.mar_id)
+                      onClick={() => handleSaveAnime(ani.mal_id)}>
+                      {savedAnimeIds?.some((savedAnimeId) => savedAnimeId === ani.mal_id)
                         ? 'This book has already been saved!'
                         : 'Save this Book!'}
                     </button>

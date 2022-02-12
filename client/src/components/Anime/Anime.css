@@ -1,5 +1,10 @@
-.Anime {
-  text-align: center;
+.searchContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.searchBar {
+  padding: 1rem;
 }
 
 .animePage {
@@ -8,9 +13,11 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 2rem;
+  padding: 2rem;
   justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
   color: black;
+  border-left: 3px solid;
 }
 
 .mainContent {

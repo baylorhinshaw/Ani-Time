@@ -77,13 +77,14 @@ return (
 <Layout>
   <Content>
     <div className='mainContent'>
-      <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
-      <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
-      <button onClick={getAnime}>Submit</button>
-      <div className="Anime">
+      <div class= 'searchContainer'>
+        <div class= "searchBar">
+        <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
+        <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
+        <button onClick={getAnime}>Submit</button>
+        </div>
       </div>
-     
-        <div className= "animePage">
+    <div className= "animePage">
       
       {anime.map((ani) => {
       return (

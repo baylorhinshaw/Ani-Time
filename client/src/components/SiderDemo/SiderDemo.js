@@ -83,21 +83,12 @@ function SiderDemo() {
           </Menu>
         </Sider>
         <Layout className="site-layout">
-         <Header theme= "light" className="site-layout-background" style={{ padding: 0, background: "white"}}>
+         <Header theme= "light" className="site-layout-background" style={{ padding: 0, background: "white", borderLeft: "3px solid", paddingLeft: 16}}>
             {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
               onClick: toggle,
             })}
           </Header>
-          <Content
-            className="site-layout-background"
-            style={{
-              padding: 6,
-              margin:6,
-              minHeight: 280,
-              background: "white"
-            }}
-          >
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/Anime" component={Anime} />
@@ -105,10 +96,9 @@ function SiderDemo() {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
           </Switch>
-          </Content>
           <Footer style={{ textAlign: 'center' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
         </Layout>
-      </Layout> 
+      // </Layout> 
     )
 }
 

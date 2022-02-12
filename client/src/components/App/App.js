@@ -1,4 +1,3 @@
-import './App.css';
 import SiderDemo from '../SiderDemo/SiderDemo';
 import {
   ApolloClient,

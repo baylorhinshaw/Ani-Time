@@ -73,7 +73,7 @@ function Anime() {
     }
   };
   
-    return (
+  return (
     <Layout>
       <Content>
       <div className='mainContent'>

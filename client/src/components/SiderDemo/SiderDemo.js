@@ -95,7 +95,7 @@ function SiderDemo() {
               padding: 6,
               margin:6,
               minHeight: 280,
-              background: "black"
+              background: "white"
             }}
           >
           <Switch>

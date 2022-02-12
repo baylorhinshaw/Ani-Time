@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AnimeCard from '../AnimeCard/AnimeCard';
 import './Anime.css';
 import { Pagination } from 'antd';
+import Layout, { Content } from 'antd/lib/layout/layout';
 
 function Anime() {
 
@@ -58,15 +59,21 @@ function Anime() {
     }
   
     return (
-      <div className="Anime">
-        <header className="Anime-header" >
-          <input placeholder='Year' onChange={e => setYear(e.target.value)}/>
-          <input placeholder='Season' onChange={e => setSeason(e.target.value)}/>
-          <button onClick={getAnime}>Submit</button>
-          {renderAnime()}
-          <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={25} />
+    <Layout>
+      <Content>
+      <div className='mainContent'>
+        <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
+        <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
+        <button onClick={getAnime}>Submit</button>
+          <div className="Anime">
+          </div>
+        <header className="Anime-header">
+          {renderAnime()}          
         </header>
-      </div>
+        <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={25} />
+    </div>
+      </Content>
+    </Layout>
     );
   }
   

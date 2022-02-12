@@ -4,11 +4,15 @@
   
 .Anime-header {
     background-color: gainsboro;
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
+}
+
+.mainContent {
+  align-items: center;
 }

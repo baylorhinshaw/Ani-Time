@@ -12,107 +12,108 @@ import Layout, { Content } from 'antd/lib/layout/layout';
 
 function Anime() {
 
-    const [anime, setAnime] = useState([]);
-    const [year, setYear] = useState(2022);
-    const [season, setSeason] = useState("winter");
-    const [page, setPage ] = useState(1);
-    const [lastPage, setLastPage ] = useState(1);
-    const [savedAnimeIds, setSavedAnimeIds] = useState(getSavedAnimeIds());
-    const [saveAnime] = useMutation(SAVE_ANIME)
-  
-    useEffect(() =>{
-        getAnime();
-    }, [page, lastPage])
+const [anime, setAnime] = useState([]);
+const [year, setYear] = useState(2022);
+const [season, setSeason] = useState("winter");
+const [page, setPage ] = useState(1);
+const [lastPage, setLastPage ] = useState(1);
+const [savedAnimeIds, setSavedAnimeIds] = useState(getSavedAnimeIds());
+const [saveAnime] = useMutation(SAVE_ANIME)
 
-    useEffect(() => {
-      return () => saveAnimeIds(savedAnimeIds);
-    });
+useEffect(() =>{
+getAnime();
+}, [page, lastPage])
 
-    function onChange(page, pageSize) {
-      setPage(page);
-    }
-    
-    async function getAnime(){
-      let res = await axios.get(`https://api.jikan.moe/v4/seasons/${year}/${season}?page=${page}`);
-      const { data } = res.data;
-      const animeData = data.map((anime) => ({
-        titleEnglish: anime.title_japanese,
-        titleJapanese: anime.title_english,
-        genres: [anime.genres],
-        image: anime.images.jpg.image_url,
-        mal_id: anime.mal_id,
-        score: anime.score
-      })
-      )
-      console.log(animeData)
-      setAnime(animeData);
-      setLastPage(res.data.pagination.last_visible_page);
-    }
+useEffect(() => {
+return () => saveAnimeIds(savedAnimeIds);
+});
 
-    
-  const handleSaveAnime = async (animeId) => {
-    // find the book in `anime` state by the matching id
-    const animeToSave = anime.find((anime) => anime.mal_id === animeId);
-    
+function onChange(page, pageSize) {
+setPage(page);
+}
 
-    // get token
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    if (!token) {
-      return false;
-    }
-
-    try {
-      const {data} = await saveAnime({variables: {...animeToSave} });
+async function getAnime(){
+let res = await axios.get(`https://api.jikan.moe/v4/seasons/${year}/${season}?page=${page}`);
+const { data } = res.data;
+const animeData = data.map((anime) => ({
+titleEnglish: anime.title_japanese,
+titleJapanese: anime.title_english,
+genres: [anime.genres],
+image: anime.images.jpg.image_url,
+mal_id: anime.mal_id,
+score: anime.score
+})
+)
+console.log(animeData)
+setAnime(animeData);
+setLastPage(res.data.pagination.last_visible_page);
+}
 
 
-      // if anime successfully saves to user's account, save anime id to state
-      setSavedAnimeIds([...savedAnimeIds, animeToSave.animeId]);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-  
-  return (
-    <Layout>
-      <Content>
-      <div className='mainContent'>
-        <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
-        <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
-        <button onClick={getAnime}>Submit</button>
-          <div className="Anime">
-          </div>
-        <header className="Anime-header">
+const handleSaveAnime = async (animeId) => {
+// find the book in `anime` state by the matching id
+const animeToSave = anime.find((anime) => anime.mal_id === animeId);
+
+
+// get token
+const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+if (!token) {
+return false;
+}
+
+try {
+const {data} = await saveAnime({variables: {...animeToSave} });
+
+
+// if anime successfully saves to user's account, save anime id to state
+setSavedAnimeIds([...savedAnimeIds, animeToSave.animeId]);
+} catch (err) {
+console.error(err);
+}
+};
+
+return (
+<Layout>
+  <Content>
+    <div className='mainContent'>
+      <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
+      <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
+      <button onClick={getAnime}>Submit</button>
+      <div className="Anime">
+      </div>
+     
+        <div className= "animePage">
+      
+      {anime.map((ani) => {
+      return (
         
-        </header>
-        {anime.map((ani) => {
-          return (
-            <div className="anime-card">
-                <img className="image" src={ani.image}/>
-                <div>{ani.titleJapanese}</div>
-                <div>{ani.titleEnglish}</div>
-                <div>Rating: {ani.score}</div>
-                {ani.watchLater === true && <div className='btn'>
-                    <button 
-                    onClick={alert}> ⬇ Watch Later
-                    </button>
-                </div>}
-                {ani.removeWatchLater === true && <div className='btn'>
-                    <button onClick={alert}> Remove </button>
-                </div>}
+        <div className="anime-card">
+          <img className="image" src={ani.image} />
+          <div>{ani.titleJapanese}</div>
+          <div>{ani.titleEnglish}</div>
+          <div>Rating: {ani.score}</div>
+          {ani.watchLater === true && <div className='btn'>
+            <button onClick={alert}> ⬇ Watch Later
+            </button>
+          </div>}
+          {ani.removeWatchLater === true && <div className='btn'>
+            <button onClick={alert}> Remove </button>
+          </div>}
 
-            </div>
-            )
-          })
-        }  
-        <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={25} />
+        </div>
+        )      
+      })
+      }
+      </div>
+      <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={25} />
     </div>
-      </Content>
-    </Layout>
-    );
+  </Content>
+</Layout>
+);
 
 
-  }
+}
 
 
-  export default Anime;
+export default Anime;

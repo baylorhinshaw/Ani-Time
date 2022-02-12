@@ -10,14 +10,11 @@ function Signup(props) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log(event.target)
     
     setFormState({
       ...formState,
       [name]: value,
     });
-
-    console.log(formState)
   };
 
   const handleFormSubmit = async (event) => {
@@ -26,7 +23,7 @@ function Signup(props) {
     const mutationResponse = await addUser({
       variables: formState
     });
-    console.log(mutationResponse)
+
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
   } catch (err) {

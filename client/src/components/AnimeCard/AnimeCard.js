@@ -1,5 +1,7 @@
+import { useMutation, useQuery } from '@apollo/client';
 import React from 'react'
 import './AnimeCard.css'
+
 
 function AnimeCard(props) {
     return (
@@ -7,15 +9,22 @@ function AnimeCard(props) {
             <img className="image" src={props.image}/>
             <div>{props.titleJapanese}</div>
             <div>{props.titleEnglish}</div>
-            <div>Rating: {props.score}</div>
-            <div className='btn'>
-                <button onClick={alert}> ⬇ Watch Later</button>
-            </div>
+            <div>{props.score}</div>
+            {props.watchLater == true && <div className='btn'>
+                <button 
+                onClick={alert}> ⬇ Watch Later
+                </button>
+            </div>}
+            {props.removeWatchLater == true && <div className='btn'>
+                <button onClick={alert}> Remove </button>
+            </div>}
+
         </div>
 
     )
 
 
 }
+
 
 export default AnimeCard;

@@ -3,7 +3,7 @@
   }
   
 .Anime-header {
-    background-color: rgb(255, 255, 255);
+  background: rgb(132, 106, 231);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -14,5 +14,6 @@
 }
 
 .mainContent {
-  align-items: center
+  align-items: center;
+  background: white;
 }

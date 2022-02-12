@@ -26,9 +26,7 @@ export const ADD_USER = gql`
       }
     }
   }
-`;
-
-
+`
 export const SAVE_ANIME = gql`
 mutation saveAnime($titleEnglish: String, $titleJapanese: String, $score: Int!, $mal_id: Int, $genres: [String], $image: String) {
   saveAnime(titleEnglish: $titleEnglish, titleJapanese: $titleJapanese, score: $score, mal_id: $mal_id, genres: $genres, image: $image) {
@@ -43,6 +41,7 @@ mutation saveAnime($titleEnglish: String, $titleJapanese: String, $score: Int!, 
 }
 `;
 
+
 export const REMOVE_ANIME = gql`
 mutation removeAnime($mal_id: Int) {
   removeAnime(mal_id: $mal_id) {
@@ -55,4 +54,3 @@ mutation removeAnime($mal_id: Int) {
     }
   }
 }
-`;

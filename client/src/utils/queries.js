@@ -3,8 +3,9 @@ import { gql } from '@apollo/client';
 export const QUERY_USER = gql`
   {
     user {
-      firstName
-      lastName
+      _id
+      firstname
+      lastname
       email
       password
       savedAnimes {

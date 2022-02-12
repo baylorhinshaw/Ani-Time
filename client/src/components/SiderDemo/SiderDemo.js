@@ -92,7 +92,8 @@ function SiderDemo() {
           <Content
             className="site-layout-background"
             style={{
-              padding: 16,
+              padding: 6,
+              margin:6,
               minHeight: 280,
               background: "black"
             }}

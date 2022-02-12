@@ -17,16 +17,16 @@ function Anime() {
     const [season, setSeason] = useState("winter");
     const [page, setPage ] = useState(1);
     const [lastPage, setLastPage ] = useState(1);
-    const [savedAnimeIds, setSavedAnimeIds] = useState(getSavedAnimeId());
-    const [saveAnime] = useMutation(SAVE_ANIME)
+    // const [savedAnimeIds, setSavedAnimeIds] = useState(getSavedAnimeId());
+    // const [saveAnime] = useMutation(SAVE_ANIME)
   
     useEffect(() =>{
         getAnime();
     }, [page, lastPage])
 
-    useEffect(() => {
-      return () => savedAnimeIds(savedAnimeIds);
-    });
+    // useEffect(() => {
+    //   return () => savedAnimeIds(savedAnimeIds);
+    // });
 
     function onChange(page, pageSize) {
       setPage(page);
@@ -70,6 +70,30 @@ function Anime() {
 
       return componentArray;
     }
+
+    
+  // const handleSaveAnime = async (animeId) => {
+  //   // find the book in `anime` state by the matching id
+  //   const animeToSave = anime.find((anime) => anime.mal_id === animeId);
+    
+
+  //   // get token
+  //   const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+  //   if (!token) {
+  //     return false;
+  //   }
+
+  //   try {
+  //     const {data} = await saveAnime({variables: { input: animeToSave }});
+
+
+  //     // if anime successfully saves to user's account, save anime id to state
+  //     setSavedAnimeIds([...savedAnimeIds, animeToSave.animeId]);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
   
     return (
     <Layout>
@@ -92,27 +116,5 @@ function Anime() {
 
   }
 
-  export const handleSaveAnime = async (animeId) => {
-    // find the book in `anime` state by the matching id
-    const animeToSave = anime.find((anime) => anime.mal_id === animeId);
-    
-
-    // get token
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    if (!token) {
-      return false;
-    }
-
-    try {
-      const {data} = await saveAnime({variables: { input: animeToSave }});
-
-
-      // if anime successfully saves to user's account, save anime id to state
-      setSavedAnimeIds([...savedAnimeIds, animeToSave.animeId]);
-    } catch (err) {
-      console.error(err);
-    }
-  };
   
   export default Anime;

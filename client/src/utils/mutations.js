@@ -53,4 +53,5 @@ mutation removeAnime($mal_id: Int) {
       mal_id
     }
   }
-}
+}`
+

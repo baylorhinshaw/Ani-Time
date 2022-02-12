@@ -44,7 +44,7 @@ function Anime() {
         score: anime.score
       })
       )
-      console.log(animeData)
+
       setAnime(animeData);
       setLastPage(res.data.pagination.last_visible_page);
     }
@@ -65,7 +65,7 @@ function Anime() {
     try {
       const {data} = await saveAnime({variables: {...animeToSave} });
 
-
+      console.log(data)
       // if anime successfully saves to user's account, save anime id to state
       setSavedAnimeIds([...savedAnimeIds, animeToSave.animeId]);
     } catch (err) {
@@ -92,14 +92,16 @@ function Anime() {
                 <div>{ani.titleJapanese}</div>
                 <div>{ani.titleEnglish}</div>
                 <div>Rating: {ani.score}</div>
-                {ani.watchLater === true && <div className='btn'>
-                    <button 
-                    onClick={alert}> ⬇ Watch Later
+                {Auth.loggedIn() && (
+                    <button
+                      disabled={savedAnimeIds?.some((savedAnimeId) => savedAnimeId === anime.mar_id)}
+                      className='btn-block btn-info'
+                      onClick={() => handleSaveAnime(anime.mar_id)}>
+                      {savedAnimeIds?.some((savedAnimeId) => savedAnimeId === anime.mar_id)
+                        ? 'This book has already been saved!'
+                        : 'Save this Book!'}
                     </button>
-                </div>}
-                {ani.removeWatchLater === true && <div className='btn'>
-                    <button onClick={alert}> Remove </button>
-                </div>}
+                  )}
 
             </div>
             )

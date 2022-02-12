@@ -36,6 +36,10 @@ mutation saveAnime($titleEnglish: String, $titleJapanese: String, $score: Int!, 
     email
     savedAnimes {
       mal_id
+      titleEnglish
+      titleJapanese
+      score
+      image
     }
   }
 }
@@ -51,6 +55,10 @@ mutation removeAnime($mal_id: Int) {
     email
     savedAnimes {
       mal_id
+      titleEnglish
+      titleJapanese
+      score
+      image
     }
   }
 }`

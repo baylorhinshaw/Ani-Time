@@ -18,9 +18,11 @@ function AnimeCard(props) {
             {props.removeWatchLater == true && <div className='btn'>
                 <button onClick={alert}> Remove </button>
             </div>}
+
         </div>
 
     )
+
 
 }
 

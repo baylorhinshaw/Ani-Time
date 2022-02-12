@@ -5,8 +5,8 @@ import {
   MenuFoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
-  UploadOutlined,
   FireOutlined,
+  HomeOutlined
 } from '@ant-design/icons';
 import React, { useState} from 'react';
 import Anime from '../Anime/Anime';
@@ -14,6 +14,7 @@ import { Route, Switch, Link} from 'react-router-dom';
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 import Profile from '../../pages/Profile'
+import Home from '../../pages/Home'
 import Auth from "../../utils/auth";
 
 const { Header, Sider, Content } = Layout;
@@ -43,22 +44,41 @@ function SiderDemo() {
       }
     };
 
+    function profile() {
+      if (Auth.loggedIn()) {
+        return (
+          <Link to="/profile">
+            Profile
+          </Link>
+        );
+      } else {
+        return (
+          <Link to="/login">
+            Profile
+          </Link>
+        );
+      }
+    };
+
     return (
         <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed}> 
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1" icon={<VideoCameraOutlined />}>
+            <Menu.Item key="1" icon={<HomeOutlined />}>
+              <Link to="/">
+                Home
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="2" icon={<VideoCameraOutlined />}>
               <Link to="/Anime">
                 Anime
               </Link>
             </Menu.Item>
-            <Menu.Item key="2" icon={<FireOutlined />}>
+            <Menu.Item key="3" icon={<FireOutlined />}>
               {login()}
             </Menu.Item>
-            <Menu.Item key="3" icon={<UserOutlined />}>
-              <Link to="/profile">
-                Profile
-              </Link>
+            <Menu.Item key="4" icon={<UserOutlined />}>
+              {profile()}
             </Menu.Item>
           </Menu>
         </Sider>
@@ -78,7 +98,8 @@ function SiderDemo() {
             }}
           >
           <Switch>
-            <Route exact path='/Anime' component={Anime} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/Anime" component={Anime} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />

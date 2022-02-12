@@ -7,6 +7,8 @@ import { Pagination } from 'antd';
 import { SAVE_ANIME} from '../../utils/mutations'
 import { useMutation} from '@apollo/client'
 import { saveAnimeId, getSavedAnimeId} from '../../utils/localStorage'
+import Layout, { Content } from 'antd/lib/layout/layout';
+
 
 function Anime() {
 
@@ -42,18 +44,16 @@ function Anime() {
         score: anime.score
       })
       )
-
+      console.log(animeData)
       setAnime(animeData);
       setLastPage(res.data.pagination.last_visible_page);
     }
 
     function renderAnime(){
       let componentArray = [];
-      console.log(anime)
 
       for (let i= 0; i < anime.length; i++) {
         let curAnime = anime[i]
-
         componentArray.push(
           <AnimeCard 
             titleJapanese={curAnime.titleJapanese} 
@@ -67,20 +67,26 @@ function Anime() {
 
       
       // Logic
-      console.log(componentArray)
+
       return componentArray;
     }
   
     return (
-      <div className="Anime">
-        <header className="Anime-header" >
-          <input placeholder='Year' onChange={e => setYear(e.target.value)}/>
-          <input placeholder='Season' onChange={e => setSeason(e.target.value)}/>
-          <button onClick={getAnime}>Submit</button>
-          {renderAnime()}
-          <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={25} />
+    <Layout>
+      <Content>
+      <div className='mainContent'>
+        <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
+        <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
+        <button onClick={getAnime}>Submit</button>
+          <div className="Anime">
+          </div>
+        <header className="Anime-header">
+          {renderAnime()}          
         </header>
-      </div>
+        <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={25} />
+    </div>
+      </Content>
+    </Layout>
     );
 
 

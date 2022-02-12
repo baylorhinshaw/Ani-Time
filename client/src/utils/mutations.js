@@ -6,27 +6,23 @@ export const LOGIN = gql`
       token
       user {
         _id
+        firstname
+        lastname
+        email
       }
     }
   }
 `;
 
 export const ADD_USER = gql`
-  mutation addUser(
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $password: String!
-  ) {
-    addUser(
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      password: $password
-    ) {
+  mutation addUser($firstname: String!, $lastname: String!, $email: String!, $password: String!) {
+    addUser(firstname: $firstname, lastname: $lastname, email: $email, password: $password) {
       token
       user {
         _id
+        firstname
+        lastname
+        email
       }
     }
   }
@@ -45,6 +41,7 @@ mutation saveAnime($titleEnglish: String, $titleJapanese: String, $score: Int!, 
 }
 `;
 
+
 export const REMOVE_ANIME = gql`
 mutation removeAnime($mal_id: Int) {
   removeAnime(mal_id: $mal_id) {
@@ -57,5 +54,3 @@ mutation removeAnime($mal_id: Int) {
     }
   }
 }
-`;
-

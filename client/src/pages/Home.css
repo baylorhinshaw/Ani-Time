@@ -17,9 +17,23 @@
     margin-right: auto;
     margin-top: 10rem;
     padding:1rem;
+    
 }
 .welcome {
     font-size: 3rem;
     text-align:center;
 }
 
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.signupBtn {
+    position: absolute;
+    top: 77px;
+    left: 224px;
+}

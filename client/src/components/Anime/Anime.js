@@ -80,8 +80,8 @@ return (
 <Layout>
   <Content>
   <div className='mainContent'>
-      <div class= 'searchContainer'>
-        <div class= "searchBar">
+      <div className= 'searchContainer'>
+        <div className= "searchBar">
         <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
         <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
         <button onClick={getAnime}>Submit</button>

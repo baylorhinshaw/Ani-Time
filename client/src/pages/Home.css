@@ -17,9 +17,15 @@
     margin-right: auto;
     margin-top: 10rem;
     padding:1rem;
+    
 }
 .welcome {
     font-size: 3rem;
     text-align:center;
 }
 
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

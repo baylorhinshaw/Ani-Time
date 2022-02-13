@@ -2,3 +2,8 @@
     width: 300px;
 }
 
+.headerImg {
+    max-height: 64px;
+    float: right;
+}
+

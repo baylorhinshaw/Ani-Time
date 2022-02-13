@@ -16,7 +16,8 @@ import Signup from '../../pages/Signup';
 import Profile from '../../pages/Profile'
 import Home from '../../pages/Home'
 import Auth from "../../utils/auth";
-
+import anitime from 'C:/Users/brend/OneDrive/Desktop/Classwork/Ani-Time/client/src/images/anitime.jpg'
+import './SiderDemo.css'
 const { Header, Sider, Content, Footer } = Layout;
 
 
@@ -88,6 +89,8 @@ function SiderDemo() {
               className: 'trigger',
               onClick: toggle,
             })}
+            
+            <img className="headerImg" src= {anitime}></img>
           </Header>
     
           <Switch>

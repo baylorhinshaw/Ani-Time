@@ -67,11 +67,11 @@ function Anime() {
       variables: {...animeToSave} 
     })
 
-    console.log(data)
 
   // if anime successfully saves to user's account, save anime id to state
-    setSavedAnimeIds([...savedAnimeIds, animeToSave.animeId]);
-    } catch (err) {
+    setSavedAnimeIds([...savedAnimeIds, animeToSave.mal_id]);
+
+  } catch (err) {
       console.error(err);
     }
   };

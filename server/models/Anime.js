@@ -7,9 +7,9 @@ const animeSchema = new Schema({
       type: Number,
       required: true
     },
-    genres: {
-      type: [String]
-    },
+    // genres: {
+    //   type: [String]
+    // },
     titleJapanese: {
       type: String,
       trim: true

@@ -41,7 +41,6 @@ const resolvers = {
       return { token, user };
     },
     saveAnime: async (parent, args, context ) => {
-      console.log(context.user)
       console.log(args)
       if (context.user) {
    

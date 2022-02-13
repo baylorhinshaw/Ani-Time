@@ -7,7 +7,6 @@ export const QUERY_USER = gql`
       firstname
       lastname
       email
-      password
       savedAnimes {
         mal_id 
         titleEnglish

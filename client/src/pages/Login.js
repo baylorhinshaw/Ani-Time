@@ -37,7 +37,8 @@ function Login() {
   return (
     
     <div className= 'loginContainer'>
-      <Link to="/signup">← Go to Signup</Link>
+      <div className='signupBtn'><Link to="/signup">← Go to Signup</Link></div>
+      
     <div className="container my-1">
       
 

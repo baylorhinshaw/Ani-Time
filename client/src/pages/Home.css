@@ -26,6 +26,14 @@
 
 .loginContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
+    min-height: 100vh;
+}
+
+.signupBtn {
+    position: absolute;
+    top: 77px;
+    left: 224px;
 }

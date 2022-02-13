@@ -11,6 +11,10 @@
   padding: 1rem;
  
 }
+.pages{
+  display: flex;
+  justify-content: center;
+}
 
 .animePage {
   

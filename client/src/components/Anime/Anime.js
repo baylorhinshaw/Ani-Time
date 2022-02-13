@@ -114,8 +114,9 @@ return (
       })
       }
       </div>
+      <div className= 'pages'>
       <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={15} />
-
+      </div>
     </div>
   </Content>
 </Layout>

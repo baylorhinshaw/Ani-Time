@@ -79,13 +79,14 @@ function Anime() {
 return (
 <Layout>
   <Content>
-    <div className='mainContent'>
-      <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
-      <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
-      <button onClick={getAnime}>Submit</button>
-      <div className="Anime">
+  <div className='mainContent'>
+      <div class= 'searchContainer'>
+        <div class= "searchBar">
+        <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
+        <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
+        <button onClick={getAnime}>Submit</button>
+        </div>
       </div>
-     
         <div className= "animePage">
       
       {anime.map((ani) => {
@@ -113,7 +114,7 @@ return (
       })
       }
       </div>
-      <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={25} />
+      <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={15} />
 
     </div>
   </Content>

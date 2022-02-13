@@ -62,7 +62,7 @@ function SiderDemo() {
 
     return (
         <Layout>
-        <Sider theme="light" trigger={null} collapsible collapsed={collapsed}> 
+        <Sider theme="dark" trigger={null} breakpoint={"lg"} collapsible collapsed={collapsed}> 
           <Menu  mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<HomeOutlined />}>
               <Link to="/">
@@ -83,21 +83,13 @@ function SiderDemo() {
           </Menu>
         </Sider>
         <Layout className="site-layout">
-         <Header theme= "light" className="site-layout-background" style={{ padding: 0, background: "white"}}>
+         <Header theme= "light" className="site-layout-background" style={{ padding: 0, background: "linear-gradient(261deg, rgba(131,102,214,1) 0%, rgba(230,198,255,1) 47%, rgba(224,230,251,1) 82%)", borderLeft: "3px solid", paddingLeft: "1rem"}}>
             {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
               onClick: toggle,
             })}
           </Header>
-          <Content
-            className="site-layout-background"
-            style={{
-              padding: 6,
-              margin:6,
-              minHeight: 280,
-              background: "white"
-            }}
-          >
+    
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/Anime" component={Anime} />
@@ -105,10 +97,11 @@ function SiderDemo() {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
           </Switch>
-          </Content>
+          
           <Footer style={{ textAlign: 'center' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
         </Layout>
-      </Layout> 
+        </Layout>
+      
     )
 }
 

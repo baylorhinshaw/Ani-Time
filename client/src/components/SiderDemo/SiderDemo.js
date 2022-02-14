@@ -16,7 +16,7 @@ import Signup from '../../pages/Signup';
 import Profile from '../../pages/Profile'
 import Home from '../../pages/Home'
 import Auth from "../../utils/auth";
-import anitime from 'C:/Users/brend/OneDrive/Desktop/Classwork/Ani-Time/client/src/images/ANITIME.PNG'
+import anitime from '../../images/ANITIME.PNG'
 import './SiderDemo.css'
 const { Header, Sider, Content, Footer } = Layout;
 

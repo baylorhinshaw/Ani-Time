@@ -59,7 +59,6 @@ mutation removeAnime($mal_id: Int) {
       titleJapanese
       score
       image
-      genres
     }
   }
 }`

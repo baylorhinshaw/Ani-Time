@@ -52,12 +52,13 @@ const resolvers = {
       }
     },
     removeAnime: async (parent, {mal_id}, context ) => {
-      console.log(mal_id)
-      return await User.findOneAndUpdate(
-        { _id: context.user._id },
-        { $pull: { savedAnimes: { mal_id: mal_id } } },
-        { new: true }
-        );
+      if(context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedAnimes: { mal_id: mal_id } } },
+          { new: true }
+          );
+      }
     },
   }
 };

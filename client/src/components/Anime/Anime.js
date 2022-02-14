@@ -91,8 +91,9 @@ return (
       
       {anime.map((ani) => {
       return (
-        
-        <div className="anime-card">
+   
+        <div className="anime-card">   
+          
           <img className="image" src={ani.image} />
           <div>{ani.titleJapanese}</div>
           <div>{ani.titleEnglish}</div>
@@ -110,12 +111,13 @@ return (
 
 
         </div>
+        
         )      
       })
       }
       </div>
       <div className= 'pages'>
-      <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={15} />
+      <Pagination onChange={onChange} defaultCurrent={1} total={lastPage * 25} pageSize={25} />
       </div>
     </div>
   </Content>

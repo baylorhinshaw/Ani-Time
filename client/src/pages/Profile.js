@@ -4,32 +4,20 @@ import { useMutation, useQuery } from '@apollo/client';
 import { REMOVE_ANIME } from '../utils/mutations'
 import Auth from '../utils/auth'
 import { removeAnimeId } from '../utils/localStorage'
+import { Pagination } from 'antd';
+import Layout, { Content } from 'antd/lib/layout/layout';
 
 function Profile() {
     const { loading, data } = useQuery(QUERY_USER);
-    const [removeAnime] = useMutation(REMOVE_ANIME)
-    const [ userData, setUserData ] = useState({})
+    const [removeAnime, {error}] = useMutation(REMOVE_ANIME)
 
     let user = data?.user;
-    console.log(user)
-
-    useEffect(() => {
-        return setUserData(user)
-    })
-
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    if (!token) {
-        return false;
-    }
-    
 
     if (loading) {
-        return <h2>LOADING...</h2>;
-    }
+      return <h2>LOADING...</h2>;
+  } 
 
 
-    console.log(userData);
 
     const handleDeleteAnime = async (animeId) => {
         const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -37,15 +25,14 @@ function Profile() {
         if (!token) {
           return false;
         }
-    
+
         try {
           const { data } = await removeAnime({
-            variables: { animeId }
+            variables: { mal_id: animeId }
           })
     
-          console.log(data)
-          const updatedUser = data?.removeBook;
-          setUserData(updatedUser);
+          const updatedUser = data?.removeAnime;
+          user = updatedUser;
     
           // upon success, remove book's id from localStorage
           removeAnimeId(animeId);
@@ -54,17 +41,40 @@ function Profile() {
         }
       };
 
-    //see console.log and use userData as my profile data
+    // //see console.log and use userData as my profile data
+    const { savedAnimes } = user;
 
     return (
-        <div>
-            <h1>Welcome</h1>
-            <div className='watch-later-list'>
-                <h2></h2>
-
-            </div>
+      <Layout>
+        <Content>
+        <div className='mainContent'>
+          <h2>Welcome, {user.firstname}</h2>
+          <p>User's Bio</p>
         </div>
-    )
+        <div className= "animePage">
+            
+            {savedAnimes.map((anime) => {
+            return (
+              
+              <div className="anime-card">
+                <img className="image" src={anime.image} />
+                <div>{anime.titleJapanese}</div>
+                <div>{anime.titleEnglish}</div>
+                <div>Rating: {anime.score}</div>
+                <button
+                  className='btn-block btn-info'
+                  onClick={() => handleDeleteAnime(anime.mal_id)}>
+                  Delete this Anime!
+                </button>
+              </div>
+              )      
+            })
+            }
+          </div>
+        </Content>
+      </Layout>
+      );
+      
 }
 
 export default Profile;

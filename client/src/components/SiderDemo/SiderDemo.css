@@ -5,5 +5,16 @@
 .headerImg {
     max-height: 64px;
     float: right;
+    box-shadow: -4px 0px 18px 2px;
 }
 
+.ant-layout-sider-children{
+height: 100%;
+margin-top: -0.1px;
+padding-top: 0.1px;
+background: rgba(182, 180, 180, 0.466);
+}
+
+.ant-menu-root.ant-menu-vertical, .ant-menu-root.ant-menu-vertical-left, .ant-menu-root.ant-menu-vertical-right, .ant-menu-root.ant-menu-inline{
+    background: rgba(252, 252, 252, 0.116);
+}

@@ -63,7 +63,7 @@ function SiderDemo() {
 
     return (
         <Layout>
-        <Sider theme="dark" trigger={null} breakpoint={"lg"} collapsible collapsed={collapsed}> 
+        <Sider trigger={null} breakpoint={"lg"} collapsible collapsed={collapsed}> 
           <Menu  mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<HomeOutlined />}>
               <Link to="/">
@@ -101,7 +101,7 @@ function SiderDemo() {
             <Route exact path="/profile" component={Profile} />
           </Switch>
           
-          <Footer style={{ textAlign: 'center' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
+          <Footer style={{ textAlign: 'center', background: 'black', color:'white' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
         </Layout>
         </Layout>
       

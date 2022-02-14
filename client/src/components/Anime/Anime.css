@@ -32,6 +32,7 @@
   justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
   color: black;
+  border-left: 3px solid;
   box-shadow: inset 11px 7px 20px 2px;
 }
 

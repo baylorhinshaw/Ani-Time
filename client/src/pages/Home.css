@@ -8,18 +8,18 @@
 
 .anitime {
     max-width: 600px;
-    min-width: 600px;
+    object-fit: contain;
     opacity: 1;
+    flex:auto;
         
 }
 
 .anitimeIMG {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
     padding: 2rem;
     min-height: 50vh;
-    
+    overflow: auto;
 }
 .welcome {
     font-size: 3rem;
@@ -30,7 +30,7 @@
 .loginContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 2rem;
     text-align: center;
     min-height: 100vh;
 }

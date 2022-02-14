@@ -6,17 +6,21 @@ import 'animate.css';
 
 function Home() {
 return (
-
-<div style={{ backgroundImage: `url(${Haikyuu})` }} className="home">
-    <div className="anitimeIMG">
-        <img className='anitime' src={Anitime} />
+<div>
+    <div className="welcome" style={{ background: 'black' }}>
+        <h1 class='animate__animated animate__bounce animate__infinite	infinite animate__slower 3s' style={{ color: 'white'}} >Welcome to Ani-Time
+        </h1>
     </div>
-    <br></br>
-    <div className="welcome">
-        <h1 class='animate__animated animate__bounce animate__infinite	infinite animate__slower 3s'>Welcome to Ani-Time</h1>
+    <div style={{ backgroundImage: `url(${Haikyuu})`, minWidth : '1000px' }} className="homeBackground">
+        <div className="welcome">
+            <div className="anitimeIMG">
+                <img className='anitime' src={Anitime} />
+            </div>
+            <br></br>
+
+        </div>
     </div>
 </div>
-
 )
 }
 

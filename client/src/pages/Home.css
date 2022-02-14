@@ -9,19 +9,22 @@
 .anitime {
     max-width: 600px;
     min-width: 600px;
+    opacity: 1;
+        
 }
 
 .anitimeIMG {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10rem;
-    padding:1rem;
+    padding: 2rem;
+    min-height: 50vh;
     
 }
 .welcome {
     font-size: 3rem;
     text-align:center;
+    margin-top: 0;
 }
 
 .loginContainer {

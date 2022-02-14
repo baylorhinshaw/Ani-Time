@@ -6,8 +6,8 @@ import { SAVE_ANIME } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 import { saveAnimeIds, getSavedAnimeIds } from '../../utils/localStorage'
 import Layout, { Content } from 'antd/lib/layout/layout';
-
 import './Anime.css';
+import '../AnimeCard/AnimeCard.css';
 
 function Anime() {
 

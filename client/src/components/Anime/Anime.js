@@ -84,7 +84,7 @@ return (
         <div className= "searchBar">
         <input placeholder='Year' onChange={e=> setYear(e.target.value)}/>
         <input placeholder='Season' onChange={e=> setSeason(e.target.value)}/>
-        <button onClick={getAnime}>Submit</button>
+        <button className='btn-block btn-info' onClick={getAnime}>Submit</button>
         </div>
       </div>
         <div className= "animePage">

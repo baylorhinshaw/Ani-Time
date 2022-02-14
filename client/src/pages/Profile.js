@@ -6,6 +6,7 @@ import Auth from '../utils/auth'
 import { removeAnimeId } from '../utils/localStorage'
 import { Pagination } from 'antd';
 import Layout, { Content } from 'antd/lib/layout/layout';
+import './Profile.css'
 
 function Profile() {
     const { loading, data } = useQuery(QUERY_USER);
@@ -49,13 +50,11 @@ function Profile() {
         <Content>
         <div className='mainContent'>
           <h2>Welcome, {user.firstname}</h2>
-          <p>User's Bio</p>
+          <p className='savedTxt'>Saved Anime List:</p>
         </div>
         <div className= "animePage">
-            
             {savedAnimes.map((anime) => {
             return (
-              
               <div className="anime-card">
                 <img className="image" src={anime.image} />
                 <div>{anime.titleJapanese}</div>
@@ -70,7 +69,7 @@ function Profile() {
               )      
             })
             }
-          </div>
+        </div>
         </Content>
       </Layout>
       );

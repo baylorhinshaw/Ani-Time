@@ -1,0 +1,9 @@
+.mainContent {
+    text-align: center;
+    font-size: x-large;
+}
+
+.savedTxt {
+    font-weight: bold;
+    border-bottom: 3px solid rgb(181, 8, 255);
+}

@@ -12,9 +12,17 @@
 height: 100%;
 margin-top: -0.1px;
 padding-top: 0.1px;
-background: rgba(182, 180, 180, 0.466);
+background: grey;
 }
 
 .ant-menu-root.ant-menu-vertical, .ant-menu-root.ant-menu-vertical-left, .ant-menu-root.ant-menu-vertical-right, .ant-menu-root.ant-menu-inline{
-    background: rgba(252, 252, 252, 0.116);
+    background: grey;
+}
+
+.headerShadow{
+    box-shadow: inset 3px 3px 8px 0px;
+}
+
+.trigger {
+    padding-left: 16px;
 }

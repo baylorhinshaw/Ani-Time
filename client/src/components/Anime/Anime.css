@@ -15,7 +15,8 @@
 .searchBar > input {
   margin: .5rem;
 }
-.pages{
+
+.pages {
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -23,7 +24,6 @@
 }
 
 .animePage {
-  
   background: linear-gradient(261deg, rgba(131,102,214,1) 0%, rgba(230,198,255,1) 47%, rgba(224,230,251,1) 82%);
   display: flex;
   flex-direction: row;
@@ -32,7 +32,6 @@
   justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
   color: black;
-  border-left: 3px solid;
   box-shadow: inset 11px 7px 20px 2px;
 }
 

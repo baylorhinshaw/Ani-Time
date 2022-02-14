@@ -84,7 +84,7 @@ function SiderDemo() {
           </Menu>
         </Sider>
         <Layout className="site-layout">
-         <Header theme= "light" className="site-layout-background" style={{ padding: 0, background: "linear-gradient(261deg, rgba(131,102,214,1) 0%, rgba(230,198,255,1) 47%, rgba(224,230,251,1) 82%)", borderLeft: "3px solid", paddingLeft: "1rem"}}>
+         <Header className="site-layout-background headerShadow" style={{ padding: 0, background: "linear-gradient(261deg, rgba(131,102,214,1) 0%, rgba(230,198,255,1) 47%, rgba(224,230,251,1) 82%)", paddingLeft: "16"}}>
             {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
               onClick: toggle,
@@ -101,7 +101,7 @@ function SiderDemo() {
             <Route exact path="/profile" component={Profile} />
           </Switch>
           
-          <Footer style={{ textAlign: 'center', background: 'black', color:'white' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
+          <Footer style={{ textAlign: 'center', background: 'grey', color:'white' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
         </Layout>
         </Layout>
       

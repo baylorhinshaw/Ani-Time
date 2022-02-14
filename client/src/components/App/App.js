@@ -8,6 +8,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Content } from 'antd/lib/layout/layout';
 
 
 
@@ -48,6 +49,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
       <SiderDemo></SiderDemo>
+      <Content></Content>
       </Router>
     </ApolloProvider>
   );

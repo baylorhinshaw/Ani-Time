@@ -1,4 +1,3 @@
-import { useMutation, useQuery } from '@apollo/client';
 import React from 'react'
 import './AnimeCard.css'
 

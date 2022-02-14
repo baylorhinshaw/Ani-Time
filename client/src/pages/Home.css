@@ -1,9 +1,42 @@
 .home {
     display: flex;
     flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center 35%;
     height: 100vh;
 }
 
 .anitime {
     max-width: 600px;
+    object-fit: contain;
+    opacity: 1;
+    flex:auto;
+        
+}
+
+.anitimeIMG {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 50vh;
+    overflow: auto;
+}
+.welcome {
+    font-size: 3rem;
+    text-align:center;
+    margin-top: 0;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.signupBtn {
+    position: absolute;
+    top: 77px;
+    left: 224px;
 }

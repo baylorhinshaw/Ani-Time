@@ -1,4 +1,3 @@
-import './App.css';
 import SiderDemo from '../SiderDemo/SiderDemo';
 import {
   ApolloClient,
@@ -9,6 +8,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
+
 
 
 /**

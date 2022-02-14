@@ -2,6 +2,7 @@ import React from 'react'
 import Anitime from '../../src/images/anitime.jpg'
 import Haikyuu from '../../src/images/haikyuu.png'
 import './Home.css'
+import 'animate.css';
 
 function Home() {
 return (
@@ -12,7 +13,7 @@ return (
     </div>
     <br></br>
     <div className="welcome">
-        <h1>Welcome to Ani-Time</h1>
+        <h1 class='animate__animated animate__bounce animate__infinite	infinite animate__slower 3s'>Welcome to Ani-Time</h1>
     </div>
 </div>
 

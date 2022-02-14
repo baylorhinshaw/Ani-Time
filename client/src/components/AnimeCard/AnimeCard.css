@@ -3,17 +3,23 @@
     flex-direction: column;
     width: 300px;
     margin: 12px;
-    padding: 6px;
-    border: 3.5px solid rgb(53, 0, 79);
-    background: white;
+    padding: 2rem;
+    border: 3px solid rgb(181, 8, 255);
+    background: black;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 11px 9px 20px 4px black;
 }
+
 
 .image {
     max-width: 100%;
+    border: 2px solid white; 
 }
 
 .btn {
     width: 100%;
     font-size: 16px;
-    margin: 12px 0px 16px 0px;
+    margin: 0px 0px 16px 0px;
 }

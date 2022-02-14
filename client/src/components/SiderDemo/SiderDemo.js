@@ -93,10 +93,10 @@ function SiderDemo() {
         </Sider>
         <Layout className="site-layout">
          <Header className="site-layout-background headerShadow" style={{ padding: 0, background: "linear-gradient(261deg, rgba(131,102,214,1) 0%, rgba(230,198,255,1) 47%, rgba(224,230,251,1) 82%)", paddingLeft: "16", position: 'fixed', zIndex: 1, width: '100%'}}>
-            {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            {/* {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
               onClick: toggle,
-            })}
+            })} */}
             
             <img className="headerImg" src= {anitime}></img>
           </Header>

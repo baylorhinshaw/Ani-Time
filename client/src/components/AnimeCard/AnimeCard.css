@@ -12,7 +12,10 @@
     box-shadow: 11px 9px 20px 4px black;
 }
 
-
+.anime-card:hover {
+    box-shadow: 11px 9px 20px 4px rgb(0, 255, 234);
+}
+ 
 .image {
     max-width: 100%;
     border: 2px solid white; 

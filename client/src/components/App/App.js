@@ -10,6 +10,7 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 
 
+
 /**
  * Requirements:
  * 1. Create an Anime card component

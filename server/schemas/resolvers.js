@@ -24,7 +24,6 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-      console.log(user)
 
       if (!user) {
         throw new AuthenticationError('No user found with this email address');
@@ -41,7 +40,6 @@ const resolvers = {
       return { token, user };
     },
     saveAnime: async (parent, args, context ) => {
-      console.log(args)
       if (context.user) {
    
       return User.findOneAndUpdate(
@@ -56,6 +54,15 @@ const resolvers = {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
           { $pull: { savedAnimes: { mal_id: mal_id } } },
+          { new: true }
+          );
+      }
+    },
+    changePassword: async (parent, {password}, context ) => {
+      if(context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { password: password },
           { new: true }
           );
       }

@@ -63,3 +63,15 @@ mutation removeAnime($mal_id: Int) {
   }
 }`
 
+export const CHANGE_PASSWORD = gql`
+mutation changePassword($password: String!) {
+  changePassword(password: $password) {
+    token
+    user {
+      _id
+      firstname
+      lastname
+      email
+    }
+  }
+}`

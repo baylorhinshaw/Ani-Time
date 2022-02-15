@@ -1,11 +1,8 @@
 import { Layout, Menu } from 'antd';
 import 'antd/dist/antd.css';
 import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
-  FireOutlined,
   LockOutlined,
   HomeOutlined
 } from '@ant-design/icons';
@@ -17,6 +14,8 @@ import Signup from '../../pages/Signup';
 import Profile from '../../pages/Profile'
 import Home from '../../pages/Home'
 import Auth from "../../utils/auth";
+import anitime from '../../images/ANITIME.PNG'
+import './SiderDemo.css'
 
 const { Header, Sider, Content, Footer } = Layout;
 

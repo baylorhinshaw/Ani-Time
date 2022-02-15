@@ -36,47 +36,44 @@ function Login() {
 
 
   return (
-    
-  <div className= 'loginContainer'>
-      <div className='prevpageBtn'><Link to="/signup">← Go to Signup</Link>
+    <div>
+      <div className='prevpageBtn'>
+        <Link to="/signup">← Go to Signup</Link>
       </div>
-      <div className="container my-1">
+      <div className="loginContainer">
         <div className='login-text'>
           <h2>LOGIN</h2>
         </div>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2 padding">
-          <label htmlFor="email" className='label'>email-address:</label>
-          <input
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-            className="input"
-          />
-        </div>
-        <div className="flex-row space-between my-2 padding">
-          <label htmlFor="pwd" className='label'>password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-            className="input"
-          />
-        </div>
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+        <form onSubmit={handleFormSubmit}>
+          <div className="padding margin">
+            <input
+              placeholder="enter email"
+              name="email"
+              type="email"
+              id="email"
+              onChange={handleChange}
+              className="input"
+            />
           </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit" className='submit-btn'>Submit</button>
-        </div>
-      </form>
+          <div className="padding margin">
+            <input
+              placeholder="enter password"
+              name="password"
+              type="password"
+              id="pwd"
+              onChange={handleChange}
+              className="input"
+            />
+          </div>
+          {error ? (
+              <p className="error-text">The provided credentials are incorrect</p>
+          ) : null}
+          <div className="padding margin">
+            <button type="submit" className='submit-btn'>Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
 
   );
 };

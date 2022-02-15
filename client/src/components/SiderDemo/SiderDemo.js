@@ -64,7 +64,7 @@ function SiderDemo() {
 
     return (
         <Layout>
-        <Sider trigger={null} defaultCollapsed={true} collapsible={true} collapsed={collapsed} style={{
+        <Sider trigger={null} defaultCollapsed={true} collapsible={true} collapsed={true} style={{
         overflow: 'auto',
         height: '100vh',
         position: 'fixed',
@@ -93,11 +93,7 @@ function SiderDemo() {
         </Sider>
         <Layout className="site-layout">
          <Header className="site-layout-background headerShadow" style={{ padding: 0, background: "linear-gradient(261deg, rgba(131,102,214,1) 0%, rgba(230,198,255,1) 47%, rgba(224,230,251,1) 82%)", paddingLeft: "16", position: 'fixed', zIndex: 1, width: '100%'}}>
-            {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: toggle,
-            })}
-            
+                      
             <img className="headerImg" src= {anitime}></img>
           </Header>
           <Layout className="site-layout" style={{ marginLeft: 75 }}>

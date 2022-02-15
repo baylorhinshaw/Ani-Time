@@ -1,12 +1,7 @@
 .signupContainer {
    justify-content: flex-start;
    align-items: center;
-   margin-top: 3rem;
-}
-
-.container {
-   padding: 9rem;
-   padding-left: 12rem;
+   margin-top: 9rem;
 }
 
 .padding {
@@ -50,6 +45,3 @@
    transform: translateY(-7px);
  }
 
- .login-page-btn {
-    margin-bottom: 2rem;
- }

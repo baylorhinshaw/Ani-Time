@@ -1,7 +1,7 @@
 .loginContainer {
    justify-content: flex-start;
    align-items: center;
-   margin-top: 3rem;
+   margin-top: 9rem;
 }
 
 .padding {
@@ -9,10 +9,6 @@
    padding-bottom: 12px;
 }
 
-.login-text {
-   display: flex;
-   justify-content: center;
-}
 
 .label {
    padding-right: 1rem;
@@ -21,6 +17,11 @@
 .input {
    border: 1px solid rgb(172, 164, 164);
    border-radius: 9px;
+}
+
+.login-text {
+   display: flex;
+   justify-content: center;
 }
 
 .submit-btn {

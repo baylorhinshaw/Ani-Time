@@ -45,4 +45,6 @@
 
 .homeBackground {
     margin-top: -4rem;
+    background-repeat: no-repeat;
+    background-position: center;
 }

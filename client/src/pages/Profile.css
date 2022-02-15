@@ -13,10 +13,10 @@
     margin-top: auto;
   }
 
-  .input {
-    border: 1px solid rgb(172, 164, 164);
-    border-radius: 9px;
- }
+.input {
+border: 1px solid rgb(172, 164, 164);
+border-radius: 9px;
+}
 
  
 .submit-btn {

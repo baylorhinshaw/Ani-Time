@@ -20,7 +20,6 @@ function Profile() {
   } 
 
 
-
     const handleDeleteAnime = async (animeId) => {
         const token = Auth.loggedIn() ? Auth.getToken() : null;
     
@@ -88,10 +87,10 @@ function Profile() {
               </div>
                 <button
                 className='submit-btn'
-                onClick={() => handlePassword(document.getElementById('pwd').value)}>Change the password</button>
+                onClick={() => handlePassword(document.getElementById('pwd').value)}>Change password</button>
             </li>
           
-          <li className='savedTxt'>Saved Anime List:</li>
+          <li className='savedTxt'>Saved Anime List [{savedAnimes.length}]:</li>
           </ul>
         </div>
         <div className= "animePage">

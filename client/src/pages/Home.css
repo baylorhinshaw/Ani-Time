@@ -36,7 +36,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    padding-top: 2rem;
+    padding-top: 7rem;
     text-align: center;
     min-height: 100vh;
 }
@@ -47,3 +47,8 @@
     left: 224px;
 }
 
+.homeBackground {
+    margin-top: -4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}

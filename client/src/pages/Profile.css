@@ -1,9 +1,14 @@
 .mainContent {
     text-align: center;
     font-size: x-large;
+    padding-top: 4rem;
 }
 
 .savedTxt {
     font-weight: bold;
     border-bottom: 3px solid rgb(181, 8, 255);
 }
+
+.animeBtn {
+    margin-top: auto;
+  }

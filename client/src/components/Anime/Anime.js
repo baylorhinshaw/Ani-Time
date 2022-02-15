@@ -101,7 +101,7 @@ return (
           {Auth.loggedIn() && (
             <button
               disabled={savedAnimeIds?.some((savedAnimeId) => savedAnimeId === ani.mal_id)}
-              className='btn-block btn-info'
+              className='btn-block btn-info animeBtn'
               onClick={() => handleSaveAnime(ani.mal_id)}>
               {savedAnimeIds?.some((savedAnimeId) => savedAnimeId === ani.mal_id)
                 ? 'This anime has already been saved!'

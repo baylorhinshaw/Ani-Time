@@ -61,7 +61,7 @@ function Profile() {
                 <div>{anime.titleEnglish}</div>
                 <div>Rating: {anime.score}</div>
                 <button
-                  className='btn-block btn-info'
+                  className='btn-block btn-info animeBtn'
                   onClick={() => handleDeleteAnime(anime.mal_id)}>
                   Delete this Anime!
                 </button>

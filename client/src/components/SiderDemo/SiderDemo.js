@@ -62,8 +62,10 @@ function SiderDemo() {
     };
 
     return (
-        <Layout>
-        <Sider trigger={null} defaultCollapsed={true} collapsible={true} collapsed={collapsed} style={{
+
+      <Layout>
+
+        <Sider trigger={null} defaultCollapsed={true} collapsible={true} collapsed={true} style={{
         overflow: 'auto',
         height: '100vh',
         position: 'fixed',
@@ -92,26 +94,23 @@ function SiderDemo() {
         </Sider>
         <Layout className="site-layout">
          <Header className="site-layout-background headerShadow" style={{ padding: 0, background: "linear-gradient(261deg, rgba(131,102,214,1) 0%, rgba(230,198,255,1) 47%, rgba(224,230,251,1) 82%)", paddingLeft: "16", position: 'fixed', zIndex: 1, width: '100%'}}>
-            {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: toggle,
-            })}
+            <img className="headerImg" src= {anitime}></img>
           </Header>
           <Layout className="site-layout" style={{ marginLeft: 75 }}>
       
       <Content style={{ marginTop:'0', overflow: 'initial' }}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/Anime" component={Anime} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/profile" component={Profile} />
-          </Switch>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Anime" component={Anime} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/profile" component={Profile} />
+        </Switch>
           </Content>
           </Layout>
           <Footer style={{ textAlign: 'center', background: 'black', color:'white', paddingLeft: '7rem', minHeight: '18rem' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
         </Layout> 
-        </Layout>
+      </Layout>
     )
 }
 

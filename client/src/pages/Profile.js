@@ -4,7 +4,6 @@ import { useMutation, useQuery } from '@apollo/client';
 import { REMOVE_ANIME } from '../utils/mutations'
 import Auth from '../utils/auth'
 import { removeAnimeId } from '../utils/localStorage'
-import { Pagination } from 'antd';
 import Layout, { Content } from 'antd/lib/layout/layout';
 import './Profile.css'
 import { CHANGE_PASSWORD } from '../utils/mutations';
@@ -47,7 +46,6 @@ function Profile() {
       
 
       const handlePassword = async (password) => {
-        console.log(password)
         const token = Auth.loggedIn() ? Auth.getToken() : null;
     
         if (!token) {
@@ -58,7 +56,7 @@ function Profile() {
           const { data } = await changePassword({
             variables: { password: password }
           })
-    
+          
           Auth.logout()
           alert('Password changed! Login Again!')
         } catch (err) {
@@ -85,13 +83,16 @@ function Profile() {
                   name="password"
                   type="password"
                   id="pwd"
+                  className="input"
               />
               </div>
-              <button
-              onClick={() => handlePassword(document.getElementById('pwd').value)}>Change the password</button>
+                <button
+                className='submit-btn'
+                onClick={() => handlePassword(document.getElementById('pwd').value)}>Change the password</button>
             </li>
+          
+          <li className='savedTxt'>Saved Anime List:</li>
           </ul>
-          <p className='savedTxt'>Saved Anime List:</p>
         </div>
         <div className= "animePage">
             {savedAnimes.map((anime) => {

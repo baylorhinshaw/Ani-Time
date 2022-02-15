@@ -36,9 +36,22 @@ const userSchema = new Schema(
 
 // hash user password
 userSchema.pre('save', async function (next) {
+  console.log(this)
   if (this.isNew || this.isModified('password')) {
+    console.log(this.password)
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+userSchema.pre('findOneAndUpdate', async function (next) {
+  const update = this.getUpdate('password')
+
+  if (update.password) {
+    const saltRounds = 10;
+    update.password = await bcrypt.hash(update.password, saltRounds);
   }
 
   next();
@@ -49,7 +62,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+// when we query a user, we'll also get another field called `animeCount` with the number of saved animes we have
 userSchema.virtual('animeCount').get(function () {
   return this.savedAnimes.length;
 });

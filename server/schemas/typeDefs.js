@@ -33,6 +33,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     saveAnime(titleEnglish: String, titleJapanese: String, score: Float!, mal_id: Int, genres: [String], image: String): User
     removeAnime(mal_id: Int): User
+    changePassword(password: String!): Auth
   }
 `;
 

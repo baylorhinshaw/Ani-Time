@@ -17,8 +17,7 @@ import Signup from '../../pages/Signup';
 import Profile from '../../pages/Profile'
 import Home from '../../pages/Home'
 import Auth from "../../utils/auth";
-import anitime from '../../images/ANITIME.PNG'
-import './SiderDemo.css'
+
 const { Header, Sider, Content, Footer } = Layout;
 
 
@@ -95,7 +94,6 @@ function SiderDemo() {
         </Sider>
         <Layout className="site-layout">
          <Header className="site-layout-background headerShadow" style={{ padding: 0, background: "linear-gradient(261deg, rgba(131,102,214,1) 0%, rgba(230,198,255,1) 47%, rgba(224,230,251,1) 82%)", paddingLeft: "16", position: 'fixed', zIndex: 1, width: '100%'}}>
-
             <img className="headerImg" src= {anitime}></img>
           </Header>
           <Layout className="site-layout" style={{ marginLeft: 75 }}>
@@ -113,7 +111,6 @@ function SiderDemo() {
           <Footer style={{ textAlign: 'center', background: 'black', color:'white', paddingLeft: '7rem', minHeight: '18rem' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
         </Layout> 
       </Layout>
-      
     )
 }
 

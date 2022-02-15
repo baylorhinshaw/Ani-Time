@@ -29,7 +29,11 @@
 
 }
 
-.loginContainer {
+.homeBackground {
+    margin-top: -4rem;
+}
+
+.container {
     display: flex;
     flex-direction: column;
     padding-top: 7rem;
@@ -37,7 +41,7 @@
     min-height: 100vh;
 }
 
-.signupBtn {
+.prevpageBtn {
     position: absolute;
     top: 77px;
     left: 224px;

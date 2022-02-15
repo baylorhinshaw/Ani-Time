@@ -1,21 +1,17 @@
-.loginContainer {
+.signupContainer {
    justify-content: flex-start;
    align-items: center;
    margin-top: 3rem;
 }
 
+.container {
+   padding: 9rem;
+   padding-left: 12rem;
+}
+
 .padding {
-   padding-top: 12px;
-   padding-bottom: 12px;
-}
-
-.login-text {
-   display: flex;
-   justify-content: center;
-}
-
-.label {
-   padding-right: 1rem;
+   padding-top: 9px;
+   padding-bottom: 9px;
 }
 
 .input {
@@ -23,8 +19,12 @@
    border-radius: 9px;
 }
 
+.label {
+   padding-right: 1rem;
+}
+
 .submit-btn {
-   margin-top: 12px;
+   margin-top: 2rem;
    padding: 4px 6px 4px 6px;
    width: 140px;
    height: 45px;
@@ -40,6 +40,7 @@
    transition: all 0.3s ease 0s;
    cursor: pointer;
    outline: none;
+   justify-content: center;
 }
 
 .submit-btn:hover {
@@ -47,4 +48,8 @@
    box-shadow: 0px 15px 20px rgb(227, 214, 253, 0.4),;
    color: #fff;
    transform: translateY(-7px);
+ }
+
+ .login-page-btn {
+    margin-bottom: 2rem;
  }

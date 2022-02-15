@@ -7,9 +7,9 @@ import './Signup.css'
 import './Home.css'
 
 
-function Signup(props) {
+function Signup() {
   const [formState, setFormState] = useState({ firstname: '', lastname: '', email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -90,6 +90,12 @@ function Signup(props) {
                 className="input"
               />
             </div>
+            {error ? (
+              <div>
+                <p className="error-text">Signup incomplete</p>
+              </div>
+            ) : null}
+
             <div className="flex-row flex-end">
               <button type="submit" className='submit-btn'>Submit</button>
             </div>

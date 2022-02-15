@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { QUERY_USER } from '../utils/queries'
 import { useMutation, useQuery } from '@apollo/client';
 import { REMOVE_ANIME } from '../utils/mutations'
 import Auth from '../utils/auth'
 import { removeAnimeId } from '../utils/localStorage'
-import { Pagination } from 'antd';
 import Layout, { Content } from 'antd/lib/layout/layout';
 import './Profile.css'
+import { CHANGE_PASSWORD } from '../utils/mutations';
 
 function Profile() {
     const { loading, data } = useQuery(QUERY_USER);
     const [removeAnime, {error}] = useMutation(REMOVE_ANIME)
+    const [changePassword] = useMutation(CHANGE_PASSWORD)
 
     let user = data?.user;
 
     if (loading) {
       return <h2>LOADING...</h2>;
   } 
-
 
 
     const handleDeleteAnime = async (animeId) => {
@@ -42,6 +42,28 @@ function Profile() {
         }
       };
 
+      
+
+      const handlePassword = async (password) => {
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+    
+        if (!token) {
+          return false;
+        }
+
+        try {
+          const { data } = await changePassword({
+            variables: { password: password }
+          })
+          
+          Auth.logout()
+          alert('Password changed! Login Again!')
+        } catch (err) {
+          console.error(err);
+        }
+          
+      };
+
     // //see console.log and use userData as my profile data
     const { savedAnimes } = user;
 
@@ -50,7 +72,26 @@ function Profile() {
         <Content>
         <div className='mainContent'>
           <h2>Welcome, {user.firstname}</h2>
-          <p className='savedTxt'>Saved Anime List:</p>
+          <ul>
+            <li>Email: {user.email}</li>
+            <li>
+              <div className="flex-row space-between my-2">
+              <label htmlFor="pwd">Password:</label>
+              <input
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  id="pwd"
+                  className="input"
+              />
+              </div>
+                <button
+                className='submit-btn'
+                onClick={() => handlePassword(document.getElementById('pwd').value)}>Change password</button>
+            </li>
+          
+          <li className='savedTxt'>Saved Anime List [{savedAnimes.length}]:</li>
+          </ul>
         </div>
         <div className= "animePage">
             {savedAnimes.map((anime) => {

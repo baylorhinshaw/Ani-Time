@@ -32,7 +32,7 @@
 .loginContainer {
     display: flex;
     flex-direction: column;
-    padding-top: 2rem;
+    padding-top: 7rem;
     text-align: center;
     min-height: 100vh;
 }

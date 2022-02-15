@@ -9,8 +9,7 @@ function Home() {
 return (
 <div>
     <div className="welcome" style={{ background:'black' }}>
-        <h1 class='animate__animated animate__bounce animate__infinite	infinite animate__slower 3s' style={{ color: 'white'}} >Welcome to Ani-Time
-        </h1>
+        <h1 class='animate__animated animate__bounce animate__infinite	infinite animate__slower 3s' style={{ color: 'white'}} >Welcome to Ani-Time</h1>
     </div>
     <div style={{ backgroundImage: `url(${Back})`, backgroundSize: 'cover' }} className="homeBackground">
         <div className="welcome">

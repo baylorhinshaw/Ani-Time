@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 import './Signup.css'
-import './Home.css'
+// import './Home.css'
 
 
 function Signup(props) {

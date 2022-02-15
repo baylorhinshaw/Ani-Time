@@ -1,11 +1,8 @@
 import { Layout, Menu } from 'antd';
 import 'antd/dist/antd.css';
 import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
-  FireOutlined,
   LockOutlined,
   HomeOutlined
 } from '@ant-design/icons';

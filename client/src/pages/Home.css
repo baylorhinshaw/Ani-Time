@@ -8,25 +8,26 @@
 
 .anitime {
     max-width: 600px;
-    object-fit: contain;
-    opacity: 1;
-    flex:auto;
-        
+    object-fit: contain; 
+    position: absolute;
+    z-index: 1;    
+    top: 7rem;
+    left: 41.75rem;  
 }
 
-.anitimeIMG {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    min-height: 50vh;
-    overflow: auto;
-}
+@media (max-width:629px) {
+    img#anitime {
+      display: none;
+    }
+  }
+
 .welcome {
     font-size: 3rem;
     text-align:center;
     margin-top: 4rem;
     margin-bottom:0;
-
+    position: relative;
+    
 }
 
 .homeBackground {
@@ -34,7 +35,22 @@
 }
 
 .homeBackground {
-    margin-top: -4rem;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url(../images/combine_images.jpg);
+    height: 560px;
+    width: 5076px;
+    animation: slide 60s linear infinite;
+    background-size: contain;
 }
+
+.slide {
+    overflow: hidden;
+}
+
+@keyframes slide{
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-1692px, 0, 0);
+    }
+  }

@@ -11,15 +11,16 @@ return (
     <div className="welcome" style={{ background:'black' }}>
         <h1 class='animate__animated animate__bounce animate__infinite	infinite animate__slower 3s' style={{ color: 'white'}} >Welcome to Ani-Time</h1>
     </div>
-    <div style={{ backgroundImage: `url(${Back})`, backgroundSize: 'cover' }} className="homeBackground">
-        <div className="welcome">
+    <div className="welcome">
             <div className="anitimeIMG">
-                <img className='anitime' src={Anitime} />
+                <img id="anitime" className='anitime' src={Anitime} />
             </div>
-            <br></br>
-
         </div>
+   <div className='slide'>
+    <div className="homeBackground">
+        
     </div>
+  </div> 
 </div>
 )
 }

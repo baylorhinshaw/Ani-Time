@@ -1,11 +1,9 @@
 .searchContainer {
   display: flex;
   justify-content: center;
-  border-left: 3px solid;
   box-shadow: inset 0px -3px 6px 0px;
   z-index: 1;
   background:black;
-  padding-top: 3rem;
 }
 
 .searchBar {
@@ -40,10 +38,7 @@
 
 }
 
-.mainContent {
-  align-items: center;
-  background: white;
-}
+
 
 .btn-block {
   width: 220px;
@@ -101,4 +96,10 @@
 
 .animeBtn {
   margin-top: auto;
+}
+
+.mainContent {
+  align-items: center;
+  background: white;
+  padding-left: 0;
 }

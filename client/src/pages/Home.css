@@ -15,7 +15,7 @@
     left: 41.75rem;  
 }
 
-@media (max-width:629px) {
+@media (max-width:1600px) {
     img#anitime {
       display: none;
     }
@@ -25,14 +25,11 @@
     font-size: 3rem;
     text-align:center;
     margin-top: 4rem;
-    margin-bottom:0;
+    margin-bottom:-65px;
     position: relative;
     
 }
 
-.homeBackground {
-    margin-top: -4rem;
-}
 
 .homeBackground {
     background: url(../images/combine_images.jpg);

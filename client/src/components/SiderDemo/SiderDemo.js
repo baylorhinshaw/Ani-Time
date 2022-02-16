@@ -107,7 +107,7 @@ function SiderDemo() {
         </Switch>
           </Content>
           </Layout>
-          <Footer style={{ textAlign: 'center', background: 'black', color:'white', paddingLeft: '7rem', minHeight: '18rem' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
+          <Footer style={{ textAlign: 'center', background: 'black', color:'white', paddingLeft: '7rem', minHeight: '15rem' }}>Ani-Time ©2022 Created by Team Ani-Time </Footer>
         </Layout> 
       </Layout>
     )

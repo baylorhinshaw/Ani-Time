@@ -20,9 +20,9 @@ Deployed Page: https://ani-time.herokuapp.com/
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Contributing](#Contributing)
+- [Contributing & Question](#ContributingQuestion)
 - [Test](#Test)
-- [Question](#Question)
+- [Question](#)
 
 
 
@@ -44,7 +44,7 @@ Deployed Page: https://ani-time.herokuapp.com/
 
 
 
-## Contributing & Question
+## Contributing&Question
 
 Baylor(baylorhinshaw), Brendan(Bmorrissey34), Bora(radoll93) and Fahad(sadiyan)
 

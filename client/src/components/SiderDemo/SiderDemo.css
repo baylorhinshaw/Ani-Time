@@ -4,7 +4,6 @@
 
 .headerImg {
     max-height: 64px;
-    float: right;
     box-shadow: -4px 0px 18px 2px;
 }
 
@@ -26,3 +25,17 @@ background: linear-gradient(70deg, rgba(131,102,214,1) 0%, rgba(230,198,255,1) 4
 .trigger {
     padding-left: 16px;
 }
+
+.right {
+    float: right;
+}
+
+.left {
+    float:left;
+}
+
+@media (min-width:1815px) {
+    img#disappear {
+      display: none;
+    }
+  }

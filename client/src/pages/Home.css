@@ -15,7 +15,7 @@
     left: 41.75rem;  
 }
 
-@media (max-width:1600px) {
+@media (max-width:1815px) {
     img#anitime {
       display: none;
     }
@@ -35,6 +35,8 @@
     background: url(../images/combine_images.jpg);
     height: 560px;
     width: 5076px;
+    position: relative;
+    z-index:0;
     animation: slide 60s linear infinite;
     background-size: contain;
 }
@@ -51,3 +53,4 @@
       transform: translate3d(-1692px, 0, 0);
     }
   }
+

@@ -98,7 +98,7 @@ function SiderDemo() {
             <img id='disappear' className="headerImg left" src= {anitimeMain}></img>
             
           </Header>
-          <Layout className="site-layout" style={{ marginLeft: 75 }}>
+          <Layout className="site-layout" style={{ marginLeft: 80 }}>
       
       <Content style={{ marginTop:'0', overflow: 'initial' }}>
         <Switch>

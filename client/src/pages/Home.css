@@ -11,8 +11,8 @@
     object-fit: contain; 
     position: absolute;
     z-index: 1;    
-    top: 0;
-    left: 0;  
+    top: 7rem;
+    left: 41.75rem;  
 }
 
 @media (max-width:629px) {

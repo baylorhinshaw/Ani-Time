@@ -74,7 +74,7 @@ function Profile() {
     return (
       <Layout>
         <Content>
-        <div className='mainContent'>
+        <div className='mainContent2'>
           <h2>Welcome, {user.firstname}</h2>
           <ul className='userInfo'>
             <li>Email: {user.email}</li>

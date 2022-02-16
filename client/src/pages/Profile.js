@@ -51,6 +51,10 @@ function Profile() {
           return false;
         }
 
+        if (!password) {
+          alert('Password cannot be empty!')
+          return;
+        }
         try {
           const { data } = await changePassword({
             variables: { password: password }
@@ -72,22 +76,23 @@ function Profile() {
         <Content>
         <div className='mainContent'>
           <h2>Welcome, {user.firstname}</h2>
-          <ul>
+          <ul className='userInfo'>
             <li>Email: {user.email}</li>
             <li>
               <div className="flex-row space-between my-2">
               <label htmlFor="pwd">Password:</label>
               <input
-                  placeholder="******"
+                  placeholder="enter new password"
                   name="password"
                   type="password"
                   id="pwd"
                   className="input"
               />
-              </div>
+              
                 <button
                 className='submit-btn'
                 onClick={() => handlePassword(document.getElementById('pwd').value)}>Change password</button>
+              </div>
             </li>
           
           <li className='savedTxt'>Saved Anime List [{savedAnimes.length}]:</li>

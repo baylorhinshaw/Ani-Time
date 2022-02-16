@@ -4,6 +4,8 @@
   box-shadow: inset 0px -3px 6px 0px;
   z-index: 1;
   background:black;
+  padding-top: 3.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .searchBar {

@@ -76,7 +76,7 @@ function Profile() {
         <Content>
         <div className='mainContent'>
           <h2>Welcome, {user.firstname}</h2>
-          <ul>
+          <ul className='userInfo'>
             <li>Email: {user.email}</li>
             <li>
               <div className="flex-row space-between my-2">
